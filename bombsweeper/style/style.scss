@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background: linear-gradient(to right, #50d5b7, #067d68);
+}
+
+.rules{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+    svg{
+        width: 30px;
+        height: 30px;
+    }
+}
+
+.content{
+    display: grid;
+    grid-template-columns: repeat(10,40px);
+    grid-template-rows: repeat(10,40px);
+    gap: 2px;
+
+    .box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 3px;
+        background-color: #ddd;
+        font-size: 20px;
+        position: relative;
+        box-shadow: 0 0 10px -2px #333;
+        cursor: default;
+        user-select: none;
+
+        .svg-flag{
+            position: absolute;
+            display: none;
+            background-color: #ddd;
+        }
+
+        .sidebox{
+            display: none;
+        }
+
+        span{
+            font-weight: bold;
+        }
+
+        .box1{
+            color: blue;
+        }
+
+        .box2{
+            color: red;
+        }
+
+        .box3{
+            color: purple;
+        }
+
+        .box4{
+            color: green;
+        }
+
+        .box5{
+            color: firebrick;
+        }
+
+        .box6{
+            color: orange;
+        }
+
+        .box7{
+            color: hotpink;
+        }
+
+        .box8{
+            color: gold;
+        }
+
+        &:hover{
+            background-color: #ccc;
+        }
+
+        &:hover .svg-flag{
+            background-color: #ccc;
+        }
+    }
+    
+    .open{
+        background-color: rgb(255,255,255,.37);
+        box-shadow: none;
+
+        &:hover{
+            background-color: rgb(255,255,255,.37);
+        }
+    }
+}
+
+.info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    &-left{
+        display: flex;
+        gap: 5px;
+
+        .info-flag,.info-box{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            font-size: 20px;
+            border-radius: 5px;
+            padding: 5px;
+            background-color: rgb(255,255,255,.4);
+        }
+    }
+
+    &-timer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        margin-left: 150px;
+    }
+}
+
+.score{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    position: fixed;
+    border-radius: 10px;
+    padding: 10px;
+    border: 2px solid black;
+    background-color: #ccc;
+    display: none;
+
+    &-board{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        
+        .value,.highest{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            img{
+                width: 45px;
+            }
+            
+            .score-value,.hi-score{
+                font-size: 20px;
+            }
+        }
+    }
+
+    a{
+        text-decoration: none;
+        color: black;
+        border-radius: 5px;
+        padding: 5px 10px;
+        background-color: #067d68;
+        transition: all .2s;
+
+        &:hover{
+            box-shadow: 0 0 5px -1px #333;
+        }
+    }
+}
+
+.svg-bomb{
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    *{
+        display: none;
+    }
+    .rules{
+        width: 95vw;
+        justify-content: center;
+    }
+
+    .content{
+        width: 95vw;
+        height: 95vw;
+
+        grid-template-columns: repeat(10,1fr);
+        grid-template-rows: repeat(10,1fr);
+    }
+
+    .info{
+        width: 95vw;
+        justify-content: space-between;
+
+        &-timer{
+            margin: 0;
+        }
+    }
+}

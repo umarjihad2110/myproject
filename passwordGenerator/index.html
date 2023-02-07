@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="icon" href="pic/password.png">
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <img src="pic/password.png" alt="Lock">
+            <span>Password Generator</span>
+        </div>
+        <div class="output">
+            <span class="password">
+                <span class="star">*</span>
+                <span>Password</span>
+            </span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <rect x="8" y="8" width="12" height="12" rx="2"></rect>
+                <path d="M16 8v-2a2 2 0 0 0 -2 -2h-8a2 2 0 0 0 -2 2v8a2 2 0 0 0 2 2h2"></path>
+            </svg>
+        </div>
+        <div class="length">
+            <label for="length">Password length</label>
+            <input type="number" id="length"  min="8" max="15" title="Min = 8, Max = 20">
+        </div>
+        <div class="upper">
+            <label for="upper">Uppercase</label>
+            <input type="checkbox" name="upper" id="upper">
+        </div>
+        <div class="lower">
+            <label for="lower">Lowercase</label>
+            <input type="checkbox" name="lower" id="lower">
+        </div>
+        <div class="num">
+            <label for="num">Number</label>
+            <input type="checkbox" name="num" id="num">
+        </div>
+        <div class="symbol">
+            <label for="symbol">Symbol</label>
+            <input type="checkbox" name="symbol" id="symbol">
+        </div>
+        <button type="button">
+            <span>Generate</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-badge-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M13 7h-6l4 5l-4 5h6l4 -5z"></path>
+            </svg>
+        </button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

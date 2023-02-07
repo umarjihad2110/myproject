@@ -1,0 +1,9 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+div{
+    font-size: 70px;
+    margin: 30px auto;
+    text-transform: uppercase;
+}

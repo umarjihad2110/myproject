@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion | Time</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="icon" href="../pic/clock.png">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="../pic/clock.png" alt="Clock" width="40">
+            <span>Time</span>
+        </div>
+        <div class="content">
+            <div class="left">
+                <input type="number" class="input" autofocus>
+                <select name="units" id="units" side="left">
+                    <option value="0">Seconds (s)</option>
+                    <option value="1">Minutes (m)</option>
+                    <option value="2">Hours (h)</option>
+                </select>
+            </div>
+            <div class="equal">=</div>
+            <div class="right">
+                <div class="output">0</div>
+                <select name="units" id="units" side="right">
+                    <option value="0">Seconds (s)</option>
+                    <option value="1">Minutes (m)</option>
+                    <option value="2">Hours (h)</option>
+                </select>
+            </div>
+        </div>
+        <div class="footer">
+            <button type="button" class="convert">Convert</button>
+            <div class="line"></div>
+            <a href="../index.html" class="length">Length</a>
+            <a href="../weight/weight.html" class="weight">Weight</a>
+            <a href="../temperature/temp.html" class="temp">Temperature</a>
+        </div>
+    </div>
+
+    <script src="time-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Open+Sans&family=Shadows+Into+Light&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, rgb(175, 189, 33), rgb(34, 189, 49));
+}
+
+.topbar{
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(7, 8, 4,.85);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(175, 189, 33);
+    box-shadow: 0 5px 30px rgb(44, 53, 20);
+}
+
+.logo{
+    width: 60px;
+    height: 60px;
+    background-image: url(uin.png);
+    background-size: cover;
+    margin-left: 5px;
+}
+
+.title{
+    font-size: 25px;
+    text-transform: uppercase;
+    margin-right: 30px;
+}
+
+.container{
+    padding: 50px;
+    background-color: rgb(22, 55, 25);
+    border-radius: 20px;
+    color: white;
+    box-shadow: 0 10px 30px rgb(44, 53, 20);
+    width: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+}
+
+/* .username,.password{
+    width: 300px;
+} */
+
+input[type="number"],
+input[type="password"]{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-size: 17px;
+}
+
+input:hover{
+    background-color: rgba(230, 244, 190,.8);
+}
+.other{
+    display: flex;
+    justify-content: space-between;
+}
+
+.lihat-pass{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.bantuan a{
+    color: rgb(175, 189, 33);
+}
+
+.bantuan a:hover{
+    color: white;
+}
+
+button{
+    width: 100%;
+    padding: 15px;
+    text-transform: uppercase;
+    background-color: rgb(34, 189, 49);
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: rgba(34, 189, 49,.7);
+}
+
+@media (max-width: 768px){
+    body{
+        padding: 15px;
+    }
+    .container{
+        width: 100%;
+        padding: 30px;
+    }
+}

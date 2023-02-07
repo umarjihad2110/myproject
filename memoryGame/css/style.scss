@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Nunito', sans-serif;
+    height: 100vh;
+    display: flex;
+    background: linear-gradient(45deg, #614385, #516395);
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.left{
+    border-radius: 20px;
+    width: 18.5rem;
+    background-color: rgb(255,255,255,.6);
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    box-shadow: 0 50px 100px #000;
+
+    .button{
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+
+        .start{
+            width: 130px;
+            height: 40px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            background-color: #03ad00;
+            font-size: 18px;
+            box-shadow: 0 10px 20px #111;
+
+            &:hover{
+                background-color: #04bc00;
+            }
+        }
+    }
+
+    .time{
+        font-size: 40px;
+    }
+}
+
+.container{
+    height: 100%;
+    width: calc(100vh - 20px);
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    grid-template-rows: repeat(4,auto);
+    justify-items: stretch;
+    align-items: stretch;
+    padding: 30px;
+    gap: 30px;
+    border-radius: 20px;
+
+    .card{
+        padding: 10px;
+        position: relative;
+        border-radius: 20px;
+        background-color: rgb(255,255,255,.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: all .3s;
+        box-shadow: 0 20px 50px #111;
+        
+        &:hover{
+            transform: scale(.95);
+        }
+
+        .questionmark{
+            width: 65%;
+            position: absolute;
+            opacity: 1;
+            transition: all .3s;
+            user-select: none;
+        }
+
+        .image{
+            opacity: 0;
+            margin: auto;
+            width: 100%;
+            transition: all 1s;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .solid{
+            opacity: 1;
+        }
+
+        .transparent{
+            opacity: 0;
+        }
+    }
+
+    .clicked{
+        animation: buka .5s forwards;
+    
+        .image{
+            opacity: 1;
+        }
+
+        .questionmark{
+            opacity: 0;
+        }
+        &:hover{
+            transform: scale(.95);
+        }
+    }
+
+    .checked{
+        transition: all .2s .5s;
+        background-color: limegreen;
+
+        .image{
+            opacity: 1;
+        }
+
+        .questionmark{
+            opacity: 0;
+        }
+        &:hover{
+            transform: scale(.95);
+        }
+    }
+
+    .peek1{
+        animation: peek1 .5s forwards;
+
+        .image{
+            opacity: 1;
+        }
+
+        .questionmark{
+            opacity: 0;
+        }
+    }
+
+    .peek2{
+        animation: peek2 .5s forwards;
+
+        .image{
+            opacity: 0;
+        }
+
+        .questionmark{
+            opacity: 1;
+        }
+    }
+}
+
+.lost,.won{
+    position: absolute;
+    width: 400px;
+    background-color: rgb(255,255,255,.6);
+    border-radius: 20px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    box-shadow: 0 50px 100px #000;
+
+    div{
+        font-size: 40px;
+    }
+
+    a{
+        padding: 10px;
+        background-color: #03ad00;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+        box-shadow: 0 10px 20px #111;
+
+        &:hover{
+            background-color: #04bc00;
+        }
+    }
+}
+
+.tutup{
+    animation: tutup .5s forwards;
+}
+
+@keyframes buka{
+    0%{
+        transform: scale3d(1,1,1);
+    }
+    50%{
+        transform: scale3d(0,1,1);
+    }
+    100%{
+        transform: scale3d(1,1,1);
+    }
+}
+
+@keyframes tutup {
+    0%{
+        transform: scale3d(1,1,1);
+    }
+    50%{
+        transform: scale3d(0,1,1);
+    }
+    100%{
+        transform: scale3d(1,1,1);
+    }
+}
+
+@keyframes peek1 {
+    0%{
+        transform: scale3d(1,1,1);
+    }
+    50%{
+        transform: scale3d(1,0,1);
+    }
+    100%{
+        transform: scale3d(1,1,1);
+    }
+}
+
+@keyframes peek2 {
+    0%{
+        transform: scale3d(1,1,1);
+    }
+    50%{
+        transform: scale3d(1,0,1);
+    }
+    100%{
+        transform: scale3d(1,1,1);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    body{
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 10px;
+        background: linear-gradient(to right,#4cb8c4, #3cd3ad);
+    }
+
+    .left{
+        width: 100%;
+        margin-top: 0;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .container{
+        width: 100%;
+        height: calc(100vw - 20px);
+        padding: 10px;
+        gap: 10px;
+        background-color: green;
+
+        grid-template-columns: repeat(4,auto);
+        grid-template-rows: repeat(4,auto);
+
+        .card{
+            border-radius: 10px;
+
+            .questionmark{
+                width: 70%;
+            }
+        }
+    }
+    .won,.lost{
+        width: 90%;
+    }
+}
+
+// @media screen and(max-width: 400px) {
+//     .container{
+//         .card{
+//             div{
+//                 font-size: 50px;
+//             }
+//         }
+//     }
+// }

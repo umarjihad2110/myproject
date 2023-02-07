@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap");
+* {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #005475, #000);
+}
+
+.container {
+  width: 50%;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid #333;
+}
+.container .current-result {
+  width: 100%;
+  border-radius: 10px;
+  font-size: 50px;
+  text-align: right;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 0 10px;
+  overflow: auto;
+  word-break: break-all;
+  height: 69px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  border: 2px solid #333;
+}
+.container .operation {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  font-size: 30px;
+  gap: 20px;
+}
+.container .operation .equal {
+  background-color: green;
+  grid-column: 3/span 2;
+}
+.container .operation div {
+  border-radius: 10px;
+  text-align: center;
+  background-color: #333;
+  cursor: pointer;
+  color: white;
+  transition: all 0.2;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.container .operation div:hover {
+  opacity: 0.85;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    padding: 0 10px;
+  }
+  .container {
+    width: 100%;
+  }
+  .container .operation {
+    font-size: 20px;
+  }
+}/*# sourceMappingURL=style.css.map */

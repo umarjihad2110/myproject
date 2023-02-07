@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Nunito', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    /* background-color: rgb(11, 15, 46); */
+    background: linear-gradient(to right, rgb(11, 15, 46), rgb(32, 96, 103));
+}
+
+.form{
+    width: 500px;
+    margin: auto;
+    background-color: rgb(169, 170, 171,.5);
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    justify-content: center;
+    padding: 40px;
+    border-radius: 20px;
+    align-items: center;
+    position: relative;
+}
+
+.form::before{
+    content: "";
+    background-color: rgb(169, 170, 171,.2);
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    transform: rotate(-5deg);
+    border-radius: inherit;
+}
+
+.logo{
+    width: 60px;
+    border-radius: 50%;
+    box-shadow: 0 3px 20px #000;
+}
+
+.header{
+    text-align: center;
+    font-size: 2.3rem;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 80%;
+}
+
+.username,.password{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.password{
+    flex-direction: column;
+    gap: 10px;
+}
+
+input{
+    font-size: 16px;
+    padding: .9em;
+    padding-left: 40px;
+    width: 100%;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    box-shadow: 0 7px 20px #222;
+    background-color: rgba(255,255,255,.7);
+}
+
+input:hover{
+    background-color: rgba(255,255,255,.5);
+}
+
+input::placeholder{
+    font-family: 'Nunito',sans-serif;
+    color: #111;
+}
+
+.username svg,.password svg{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.forget{
+    align-self: flex-end;
+}
+
+.forget a{
+    text-decoration: none;
+    color: #000001;
+}
+
+.forget a:hover{
+    text-decoration: underline;
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer button{
+    width: 100%;
+    font-size: 20px;
+    padding: .6em;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 7px 20px #222;
+    /* background-color: rgb(74, 212, 88); */
+    background: linear-gradient(to right, rgb(32, 96, 103), rgb(11, 15, 46));
+    color: rgb(169, 170, 171);
+}
+
+.footer button:hover{
+    /* background-color: rgb(74, 212, 88,.7); */
+    opacity: .95;
+}
+
+.belum{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    color: black;
+}
+
+.belum a{
+    text-decoration: none;
+    color: black;
+}
+
+.belum a:hover{
+    text-decoration: underline;
+}
+
+@keyframes box{
+    0%{
+        transform: scale3d(1,1,1);
+    }
+    25%{
+        transform: scale3d(.75,1.4,.1);
+    }
+    50%{
+        transform: scale3d(1.5,.8,1);
+    }
+    75%{
+        transform: scale3d(1.15,.85,1);
+    }
+    100%{
+        transform: scale3d(1,1,1);
+    }
+}

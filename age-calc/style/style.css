@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, #ffd89b, #19547b);
+}
+
+.container {
+  padding: 50px;
+  border-radius: 20px;
+  background-color: rgba(255, 221, 225, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.container .content {
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  justify-content: space-between;
+  background-color: rgba(204, 43, 94, 0.4);
+  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.1);
+}
+.container .content input {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.05rem;
+  outline: none;
+}
+.container .content .calc {
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  align-items: center;
+  background-color: white;
+  font-size: 1.05rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s;
+}
+.container .content .calc svg {
+  transition: all 0.3s;
+}
+.container .content .calc:hover {
+  background-color: #00cdac;
+}
+.container .content .calc:hover svg {
+  transform: rotate(90deg);
+}
+.container .footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.container .footer .year, .container .footer .month, .container .footer .day {
+  background-color: rgba(204, 43, 94, 0.4);
+  border-radius: 5px;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.1);
+}
+.container .footer .year-value, .container .footer .month-value, .container .footer .day-value {
+  font-size: 40px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.container .congrats {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 100vw;
+    border-radius: 0;
+    padding: 20px;
+  }
+  .container .content {
+    padding: 10px;
+    gap: 10px;
+  }
+  .container .content * {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 320px) {
+  .container {
+    padding: 10px;
+  }
+  .container .content input, .container .content .calc {
+    padding: 5px;
+  }
+  .container .footer .year, .container .footer .month, .container .footer .day {
+    width: 70px;
+    height: 70px;
+  }
+  .container .footer .year-value, .container .footer .month-value, .container .footer .day-value {
+    font-size: 25px;
+  }
+}/*# sourceMappingURL=style.css.map */

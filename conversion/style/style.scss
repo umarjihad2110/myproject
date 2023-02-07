@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #240091, #860091);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #009085;
+
+    .header{
+        text-align: center;
+        font-size: 30px;
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content{
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        .equal{
+            font-size: 30px;
+        }
+
+        .left,.right{
+            font-size: 30px;
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: rgb(255, 255, 255,.7);
+
+            .input{
+                font-size: 30px;
+                padding: 10px;
+                border: none;
+                background-color: transparent;
+                outline: none;
+                align-self: center;
+                text-align: center;
+            }
+
+            select{
+                padding: 5px;
+                border: none;
+                border-radius: 10px;
+                background-color: #009085;
+                border: none;
+                outline: none;
+            }
+
+            .output{
+                padding: 10px;
+                font-size: 30px;
+            }
+        }
+    }
+
+    .footer{
+        display: flex;
+        gap: 10px;
+        // justify-content: center;
+        align-items: center;
+        overflow: auto;
+
+        .convert,.weight,.length,.temp,.time{
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 15px;
+            border: none;
+            cursor: pointer;
+            // align-self: center;
+            background-color: rgb(255, 255, 255,.7);
+            text-decoration: none;
+            color: black;
+    
+            &:hover{
+                background-color: rgb(255, 255, 255,.5);
+            }
+        }
+
+        .line{
+            padding: 20px 1px;
+            background-color: black;
+            border-radius: 5px;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container{
+        width: 90%;
+        .content{
+            width: calc(90vw - 20px);
+            flex-direction: column;
+
+            .left,.right{
+                width: 100%;
+            }
+        }
+    }
+}

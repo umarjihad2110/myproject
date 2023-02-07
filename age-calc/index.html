@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="icon" href="pic/calendar.png">
+</head>
+<body>
+    <div class="container">
+        <h2>Age Calculator</h2>
+        <div class="content">
+            <input type="date" class="date-input">
+            <div class="calc">
+                <span>Calculate</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevrons-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <polyline points="7 7 12 12 7 17"></polyline>
+                    <polyline points="13 7 18 12 13 17"></polyline>
+                </svg>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="year">
+                <div class="year-value">-</div>
+                <div>Years</div>
+            </div>
+            <div class="month">
+                <div class="month-value">-</div>
+                <div>Month</div>
+            </div>
+            <div class="day">
+                <div class="day-value">-</div>
+                <div>Day</div>
+            </div>
+        </div>
+        <div class="congrats"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

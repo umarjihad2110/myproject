@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #ffd89b, #19547b);
+}
+
+.container{
+    padding: 50px;
+    border-radius: 20px;
+    background-color: rgb(255, 221, 225,.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+
+    .content{
+        padding: 20px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        justify-content: space-between;
+        background-color: rgb(204, 43, 94,.4);
+        box-shadow: 0 15px 10px rgb(0,0,0,.1);
+
+        input{
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            font-size: 1.05rem;
+            outline: none;
+        }
+
+        .calc{
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            gap: 2px;
+            align-items: center;
+            background-color: white;
+            font-size: 1.05rem;
+            cursor: pointer;
+            border: none;
+            transition: all .3s;
+
+            svg{
+                transition: all .3s;
+            }
+
+            &:hover{
+                background-color: #00cdac;
+
+                & svg{
+                    transform: rotate(90deg);
+                }
+            }
+        }
+    }
+    
+    .footer{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        .year,.month,.day{
+            background-color: rgb(204, 43, 94,.4);
+            border-radius: 5px;
+            font-size: 1rem;
+            display: flex;
+            flex-direction: column;
+            // gap: 10px;
+            justify-content: space-between;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+            box-shadow: 0 15px 10px rgb(0,0,0,.1);
+
+            &-value{
+                font-size: 40px;
+                user-select: none;
+            }
+        }
+    }
+
+    .congrats{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container{
+        width: 100vw;
+        border-radius: 0;
+        padding: 20px;
+
+        .content{
+            padding: 10px;
+            gap: 10px;
+
+            *{
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .container{
+        padding: 10px;
+
+        .content{
+            input,.calc{
+                padding: 5px;
+            }
+        }
+
+        .footer{
+            .year,.month,.day{
+                width: 70px;
+                height: 70px;
+
+                &-value{
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+}

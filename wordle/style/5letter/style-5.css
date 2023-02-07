@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime&family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Courier Prime", monospace;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  background: linear-gradient(45deg, #42275a, #734b6d);
+}
+
+.back {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  background-color: rgb(170, 170, 170);
+  cursor: pointer;
+}
+.back:hover {
+  background-color: rgba(170, 170, 170, 0.7);
+}
+.back svg {
+  margin: auto;
+  color: black;
+}
+
+.content {
+  display: flex;
+  gap: 50px;
+}
+.content .words {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 5px;
+  align-self: center;
+}
+.content .words .word {
+  width: 65px;
+  height: 65px;
+  background-color: #aaa;
+  border-radius: 5px;
+  font-size: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 0.3s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.content .words .border {
+  border: 2px solid black;
+}
+.content .words .flip {
+  -webkit-animation: flip 0.5s forwards;
+          animation: flip 0.5s forwards;
+}
+.content .keyboard {
+  width: 55vw;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-self: center;
+  justify-content: center;
+}
+.content .keyboard .top, .content .keyboard .mid, .content .keyboard .bottom {
+  display: flex;
+  gap: 5px;
+}
+.content .keyboard .top div, .content .keyboard .mid div, .content .keyboard .bottom div {
+  font-size: 25px;
+  padding: 5px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(170, 170, 170);
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  transition: all 0.2s;
+  font-weight: 595;
+}
+.content .keyboard .top div:hover, .content .keyboard .mid div:hover, .content .keyboard .bottom div:hover {
+  background-color: rgba(170, 170, 170, 0.7);
+}
+.content .keyboard .top .enter, .content .keyboard .mid .enter, .content .keyboard .bottom .enter {
+  font-size: 20px;
+  text-transform: capitalize;
+  padding: 5px 15px;
+}
+.content .keyboard .top .green, .content .keyboard .mid .green, .content .keyboard .bottom .green {
+  background-color: lime;
+}
+.content .keyboard .top .green:hover, .content .keyboard .mid .green:hover, .content .keyboard .bottom .green:hover {
+  background-color: rgba(0, 255, 0, 0.8);
+}
+.content .keyboard .top .yellow, .content .keyboard .mid .yellow, .content .keyboard .bottom .yellow {
+  background-color: #fad02c;
+}
+.content .keyboard .top .yellow:hover, .content .keyboard .mid .yellow:hover, .content .keyboard .bottom .yellow:hover {
+  background-color: rgba(250, 208, 44, 0.8);
+}
+.content .keyboard .top .white, .content .keyboard .mid .white, .content .keyboard .bottom .white {
+  background-color: #dee;
+}
+.content .keyboard .top .white:hover, .content .keyboard .mid .white:hover, .content .keyboard .bottom .white:hover {
+  background-color: rgba(221, 238, 238, 0.97);
+}
+
+.score {
+  padding: 50px;
+  border-radius: 10px;
+  position: fixed;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  display: none;
+  background: linear-gradient(45deg, rgba(115, 75, 109, 0.85), rgba(66, 39, 90, 0.85));
+}
+.score * {
+  color: #ddd;
+}
+.score .won, .score .lost, .score .guess {
+  font-size: 25px;
+  text-align: center;
+  display: none;
+}
+.score .value {
+  font-size: 20px;
+  text-align: center;
+  display: none;
+}
+.score a {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: lime;
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  text-align: center;
+  margin: auto;
+}
+.score .guess {
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: 1px solid black;
+  background-color: #734b6d;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #111;
+}
+
+@-webkit-keyframes flip {
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes flip {
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+@media screen and (max-width: 600px) {
+  .back {
+    top: 20px;
+    left: 20px;
+  }
+  .content {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .content .words .word {
+    width: 55px;
+    height: 55px;
+  }
+  .content .keyboard {
+    width: 98vw;
+  }
+  .content .keyboard .top div, .content .keyboard .top .enter, .content .keyboard .mid div, .content .keyboard .mid .enter, .content .keyboard .bottom div, .content .keyboard .bottom .enter {
+    font-size: 1rem;
+    font-weight: 100;
+  }
+}
+@media screen and (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .back {
+    display: none;
+  }
+}/*# sourceMappingURL=style-5.css.map */

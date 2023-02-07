@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umar | Log in</title>
+    <link rel="stylesheet" href="style-log-in.css">
+    <link rel="icon" href="../foto/logo-baru-bulat.png">
+</head>
+<body>
+    <div class="form">
+        <img src="../foto/logobaru.png" alt="" class="logo">
+        <div class="header">Log in</div>
+        <form action="">
+            <div class="username">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                    <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+                 </svg>
+                <input type="text" id="username" placeholder="Username or Email">
+            </div>
+            <div class="password">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-lock" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <rect x="5" y="11" width="14" height="10" rx="2"></rect>
+                    <circle cx="12" cy="16" r="1"></circle>
+                    <path d="M8 11v-4a4 4 0 0 1 8 0v4"></path>
+                 </svg>
+                <input type="password" id="password" placeholder="Password">
+                <div class="forget">
+                    <a href="#">Forget password?</a>
+                </div>
+            </div>
+            <div class="footer">
+                <button type="submit">Log in</button>
+                <div class="belum">
+                    <span>Don't have an account?</span>
+                    <a href="sign-in.html">Sign up</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+
+        const input = document.querySelectorAll("input")
+        const place = []
+
+        input.forEach(function(e,i){
+            place[i] = e.placeholder
+
+            e.addEventListener("focus",function(){
+                e.placeholder = ""
+            })
+
+            e.addEventListener("focusout",function(){
+                e.placeholder = place[i]
+            })
+        })
+
+    </script>
+</body>
+</html>

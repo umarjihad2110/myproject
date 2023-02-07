@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.05rem;
+}
+
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #c400ff, #ff5400);
+}
+
+.container{
+    width: 400px;
+    padding: 40px;
+    background-color: rgb(255,255,255,.4);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .title{
+        align-self: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        
+        span{
+            font-size: 25px;
+        }
+
+        img{
+            width: 40px;
+        }
+    }
+
+    .output{
+        padding: 5px;
+        background-color: rgb(255,255,255,.7);
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .password{
+            border-right: 1px solid black;
+            padding-right: 1px;
+            display: flex;
+            gap: 0;
+
+            .star{
+                display: none;
+                color: red;
+            }
+        }
+
+        svg{
+            cursor: pointer;
+        }
+    }
+
+    .length,.upper,.num,.symbol,.lower{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 2px solid black;
+        padding: 5px 0;
+        
+        input[type="number"]{
+            padding: 5px;
+            border-radius: 2px;
+            border: none;
+            outline: none;
+            width: 70px;
+            background-color: rgb(255,255,255,.7);
+        }
+
+        input[type="checkbox"]{
+            width: 20px;
+            height: 20px;
+            accent-color: #ff5400;
+            cursor: pointer;
+            background-color: rgb(255,255,255,.7);
+        }
+    }
+
+    button{
+        padding: 5px 15px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        align-items: center;
+        align-self: center;
+        background-color: rgb(255,255,255,.7);
+
+        svg{
+            transition: all .3s;
+        }
+
+        &:hover svg{
+            transform: rotate(-90deg);
+            fill: black;
+        }
+    }
+}

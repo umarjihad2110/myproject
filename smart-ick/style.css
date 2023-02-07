@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+body{
+    font-family: 'Roboto Slab', serif;
+    padding: 0;
+    min-height: 100vh;
+    background-image: url(manic.png) ;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.logo{
+    width: 150px;
+    height: 150px;
+    background-image: url(logo.png);
+    background-size: cover;
+    filter: drop-shadow(0 10px 30px rgb(24, 31, 24));
+}
+
+.container{
+    width: 600px;
+    background: rgb(7, 8, 4,.7);
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.satu,.dua,.tiga,.empat{
+    text-align: center;
+    color: white;
+}
+
+.dua{
+    color: rgb(196, 143, 24);
+    letter-spacing: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+hr{
+    width: 100%;
+}
+
+form{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+label{
+    color: white;
+}
+input[type="email"],input[type="password"]{
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+
+input:hover{
+    background: rgb(255, 255, 255,.8);
+}
+
+.username,.password{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+}
+
+.other1,.other2{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.other2 a{
+    color: rgb(196, 143, 24);
+    text-decoration: none;
+}
+
+.other2 a:hover{
+    color: rgb(75, 184, 83);
+    text-decoration: underline;
+}
+
+button{
+    padding: 10px;
+    text-transform: uppercase;
+    background: rgb(196, 143, 24);
+    border: none;
+    border-radius: 20px;
+}
+
+button:hover{
+    background:rgb(196, 143, 24,.7);
+    cursor: pointer;
+}
+
+@media (max-width: 768px){
+    .container{
+        width: 300px;
+    }
+}

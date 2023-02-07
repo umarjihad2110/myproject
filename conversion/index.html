@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion | Length</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="icon" href="pic/length.png">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="pic/length.png" alt="Length" width="40">
+            <span>Length</span>
+        </div>
+        <div class="content">
+            <div class="left">
+                <input type="number" class="input" autofocus>
+                <select name="units" id="units" side="left">
+                    <option value="0">Milimeters (mm)</option>
+                    <option value="1">Centimeters (cm)</option>
+                    <option value="2">Decimeters (dm)</option>
+                    <option value="3">Meters (m)</option>
+                    <option value="4">Decameters (dam)</option>
+                    <option value="5">Hectometers (hm)</option>
+                    <option value="6">Kilometers (km)</option>
+                </select>
+            </div>
+            <div class="equal">=</div>
+            <div class="right">
+                <div class="output">0</div>
+                <select name="units" id="units" side="right">
+                    <option value="0">Milimeters (mm)</option>
+                    <option value="1">Centimeters (cm)</option>
+                    <option value="2">Decimeters (dm)</option>
+                    <option value="3">Meters (m)</option>
+                    <option value="4">Decameters (dam)</option>
+                    <option value="5">Hectometers (hm)</option>
+                    <option value="6">Kilometers (km)</option>
+                </select>
+            </div>
+        </div>
+        <div class="footer">
+            <button type="button" class="convert">Convert</button>
+            <div class="line"></div>
+            <a href="weight/weight.html" class="weight">Weight</a>
+            <a href="temperature/temp.html" class="temp">Temperature</a>
+            <a href="time/time.html" class="time">Time</a>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

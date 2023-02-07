@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #240091, #860091);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #009085;
+}
+.container .header {
+  text-align: center;
+  font-size: 30px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.container .content {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.container .content .equal {
+  font-size: 30px;
+}
+.container .content .left, .container .content .right {
+  font-size: 30px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.container .content .left .input, .container .content .right .input {
+  font-size: 30px;
+  padding: 10px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  align-self: center;
+  text-align: center;
+}
+.container .content .left select, .container .content .right select {
+  padding: 5px;
+  border: none;
+  border-radius: 10px;
+  background-color: #009085;
+  border: none;
+  outline: none;
+}
+.container .content .left .output, .container .content .right .output {
+  padding: 10px;
+  font-size: 30px;
+}
+.container .footer {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  overflow: auto;
+}
+.container .footer .convert, .container .footer .weight, .container .footer .length, .container .footer .temp, .container .footer .time {
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  color: black;
+}
+.container .footer .convert:hover, .container .footer .weight:hover, .container .footer .length:hover, .container .footer .temp:hover, .container .footer .time:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.container .footer .line {
+  padding: 20px 1px;
+  background-color: black;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 90%;
+  }
+  .container .content {
+    width: calc(90vw - 20px);
+    flex-direction: column;
+  }
+  .container .content .left, .container .content .right {
+    width: 100%;
+  }
+}/*# sourceMappingURL=style.css.map */

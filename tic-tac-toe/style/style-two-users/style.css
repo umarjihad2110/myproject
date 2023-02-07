@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+body {
+  height: 100hv;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(to right, #43cea2, #185a9d);
+}
+
+.header {
+  margin-top: 50px;
+}
+
+.select-player {
+  margin-top: 20px;
+}
+
+.players {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.players .cross, .players .circle {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: none;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.players .cross {
+  box-shadow: 0 5px 0 -2px #bbb;
+}
+
+.content {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 3px;
+  border-radius: 5px;
+  position: relative;
+}
+.content .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.content .box:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.content .box .svg-cross, .content .box .svg-circle {
+  display: none;
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+.score-svg {
+  display: flex;
+  gap: 10px;
+}
+.score-svg svg {
+  display: none;
+}
+.score .win, .score .draw {
+  display: none;
+}
+.score a {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #185a9d;
+  text-decoration: none;
+  color: black;
+  transition: all 0.3s;
+}
+.score a:hover {
+  background-color: rgba(24, 90, 157, 0.8);
+}
+
+.back {
+  padding: 5px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s;
+}
+.back:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+@media screen and (max-width: 600px) {
+  .back {
+    top: 15px;
+    left: 15px;
+  }
+  .content {
+    width: calc(100vw - 60px);
+    height: calc(100vw - 60px);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 480px) {
+  .content .box .svg-cross, .content .box .svg-circle {
+    width: 70px;
+    height: 70px;
+  }
+}/*# sourceMappingURL=style.css.map */

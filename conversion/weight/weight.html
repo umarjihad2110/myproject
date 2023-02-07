@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion | Weight</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="icon" href="../pic/scale.png">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="../pic/scale.png" alt="Length" width="40">
+            <span>Weight</span>
+        </div>
+        <div class="content">
+            <div class="left">
+                <input type="number" class="input" autofocus>
+                <select name="units" id="units" side="left">
+                    <option value="0">Miligrams (mg)</option>
+                    <option value="1">Centigrams (cg)</option>
+                    <option value="2">Decigrams (dg)</option>
+                    <option value="3">Grams (g)</option>
+                    <option value="4">Decagrams (dag)</option>
+                    <option value="5">Hectograms (hg)</option>
+                    <option value="6">Kilograms (kg)</option>
+                </select>
+            </div>
+            <div class="equal">=</div>
+            <div class="right">
+                <div class="output">0</div>
+                <select name="units" id="units" side="right">
+                    <option value="0">Miligrams (mg)</option>
+                    <option value="1">Centigrams (cg)</option>
+                    <option value="2">Decigrams (dg)</option>
+                    <option value="3">Grams (g)</option>
+                    <option value="4">Decagrams (dag)</option>
+                    <option value="5">Hectograms (hg)</option>
+                    <option value="6">Kilograms (kg)</option>
+                </select>
+            </div>
+        </div>
+        <div class="footer">
+            <button type="button" class="convert">Convert</button>
+            <div class="line"></div>
+            <a href="../index.html" class="length">Length</a>
+            <a href="../temperature/temp.html" class="temp">Temperature</a>
+            <a href="../time/time.html" class="time">Time</a>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>

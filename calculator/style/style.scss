@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap');
+
+*{
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #005475, #000);
+}
+
+.container{
+    width: 50%;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255,.5);
+    border: 2px solid #333;
+
+    .current-result{
+        width: 100%;
+        border-radius: 10px;
+        font-size: 50px;
+        text-align: right;
+        background-color: rgb(255, 255, 255,.7);
+        padding: 0 10px;
+        overflow: auto;
+        word-break: break-all;
+        height: 69px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        border: 2px solid #333;
+    }
+
+    .operation{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(5,1fr);
+        font-size: 30px;
+        gap: 20px;
+
+        .equal{
+            background-color: green;
+            grid-column: 3/span 2;
+        }
+
+        div{
+            border-radius: 10px;
+            text-align: center;
+            background-color: #333;
+            cursor: pointer;
+            color: white;
+            transition: all .2;
+            user-select: none;
+
+            &:hover{
+                opacity: .85;;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px){
+    body{
+        padding: 0 10px;
+    }
+    .container{
+        width: 100%;
+        
+
+        .operation{
+            font-size: 20px;
+        }
+    }
+}

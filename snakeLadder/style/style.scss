@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Nunito', sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    // background: linear-gradient(to right, #09bd97, #67d7bf);
+    // background: linear-gradient(to right, #00213b, #00746a);
+    background-color: #00746a;
+    padding: 10px 0;
+}
+
+.left{
+    background-color: rgb(255,255,255,.8);
+    width: 300px;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 20px 20px #222;
+
+    .roll{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: green;
+        border-radius: 5px;
+        font-size: 20px;
+        cursor: pointer;
+        color: white;
+        border: none;
+        user-select: none;
+        box-shadow: 0 10px 20px #222;
+        transition: all .3s;
+        z-index: 3;
+
+        &:hover{
+            transform: scale(.9);
+        }
+    }
+
+    .dice{
+        transition: all 1s;
+        
+        img{
+            user-select: none;
+            pointer-events: none;
+        }
+    }
+
+    .rolling{
+        animation: rolling 1s forwards;
+    }
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    grid-template-rows: repeat(10,1fr);
+    height: 100%;
+    width: calc(100vh - 20px);
+    background-color: rgb(255,255,255,.8);
+    border-radius: 5px;
+    gap: 5px;
+    padding: 5px;
+    position: relative;
+
+    .board{
+        background-color: rgb(255, 151, 65);
+        border-radius: 5px;
+        transition: all .3s;
+    }
+
+    .pawn{
+        z-index: 3;
+        pointer-events: none;
+        position: absolute;
+        // bottom: calc(10px + ((100vh - 75px)/10)*(row - 1) + 5px*(row - 1));
+        // left: calc(5px*(col) + ((100vh - 75px) / 20)*(2*(col - 1) + 1) - (25px / 2));
+        // transform: translate(calc(5px*(col) + ((100vh - 75px) / 20)*(2*(col - 1) + 1) - (25px / 2)),calc((10px + ((100vh - 75px)/10)*(row - 1) + 5px*(row - 1))*(-1)));
+        bottom: 0;
+        left: 0;
+        transform: translate(calc(5px*(1) + ((100vh - 75px) / 20)*(2*(1 - 1) + 1) - (25px / 2)),calc((10px + ((100vh - 75px)/10)*(1 - 1) + 5px*(1 - 1))*(-1)));
+
+        transition: all 1s;
+
+        img{
+            width: 25px;
+        }
+    }
+
+    .ladder1{
+        width: 40px;
+        height: 210px;
+        transform: rotate(17deg);
+        bottom: 15px;
+        left: 230px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 2;
+
+        .stairs1{
+            width: 100%;
+            height: 4px;
+            background-color: green;
+            z-index: 1;
+        }
+
+        .side11,.side12{
+            position: absolute;
+            width: 4px;
+            height: 100%;
+            border-radius: 10px;
+            background-color: green;
+        }
+
+        .side11{
+            left: 0;
+        }
+
+        .side12{
+            right: 0;
+        }
+    }
+
+    .ladder2{
+        width: 40px;
+        height: 160px;
+        transform: rotate(-25deg);
+        bottom: 265px;
+        left: 420px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+
+        .stairs2{
+            width: 100%;
+            height: 4px;
+            background-color: green;
+        }
+
+        .side21,.side22{
+            position: absolute;
+            width: 4px;
+            height: 100%;
+            background-color: green;
+            border-radius: 10px;
+        }
+
+        .side21{
+            left: 0;
+        }
+
+        .side22{
+            right: 0;
+        }
+    }
+
+    .ladder3{
+        width: 40px;
+        height: 315px;
+        transform: rotate(52deg);
+        left: 140px;
+        bottom: 340px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-around;
+
+        .stairs3{
+            width: 100%;
+            height: 4px;
+            background-color: green;
+        }
+
+        .side31,.side32{
+            position: absolute;
+            width: 4px;
+            height: 100%;
+            background-color: green;
+            border-radius: 10px;
+        }
+
+        .side31{
+            left: 0;
+        }
+
+        .side32{
+            right: 0;
+        }
+    }
+
+    .snake1{
+        height: 220px;
+        position: absolute;
+        left: 450px;
+        bottom: 320px;
+        transform: rotate(-30deg);
+    }
+
+    .snake2{
+        height: 150px;
+        position: absolute;
+        left: 400px;
+        bottom: 20px;
+        transform: scaleX(-1) rotate(-50deg);
+    }
+
+    .snake3{
+        height: 220px;
+        position: absolute;
+        left: 110px;
+        bottom: 250px;
+        transform: scaleX(-1) rotate(-20deg);
+    }
+}
+
+.won{
+    padding: 20px;
+    font-size: 30px;
+    position: absolute;
+    background-color: rgb(255,255,255,.8);
+    border-radius: 5px;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    display: none;
+
+    a{
+        padding: 10px;
+        background-color: green;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+}
+
+@keyframes rolling {
+    from{
+        transform: rotate(450deg);
+    }
+    to{
+        transform: rotate(0);
+    }
+}

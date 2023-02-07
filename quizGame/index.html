@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizzz</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="icon" href="pic/trophy.png">
+</head>
+<body>
+    <div class="start">
+        <div class="start-header">Welcome to Geography Quiz</div>
+        <button type="button">Start</button>
+    </div>
+    <div class="container">
+        <h2 class="question">Question?</h2>
+        <ul class="option">
+            <li class="option-one">
+                <input type="radio" id="one" name="answer">
+                <label for="one">Option 1</label>
+            </li>
+            <li class="option-two">
+                <input type="radio" id="two" name="answer">
+                <label for="two">Option 2</label>
+            </li>
+            <li class="option-three">
+                <input type="radio" id="three" name="answer">
+                <label for="three">Option 3</label>
+            </li>
+            <li class="option-four">
+                <input type="radio" id="four" name="answer">
+                <label for="four">Option 4</label>
+            </li>
+        </ul>
+        <div class="footer">
+            <h2 class="timer">01:40</h2>
+            <h2 class="result"></h2>
+            <button type="button">Submit</button>
+        </div>
+    </div>
+    <div class="score">
+        <span>Score:</span>
+        <span class="score-value"></span>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

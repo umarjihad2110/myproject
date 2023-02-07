@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bombsweeper</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="icon" href="pic/minesweeper.png">
+</head>
+<body>
+    <h1 class="header">Bombsweeper</h1>
+
+    <div class="rules">
+        <div class="left">Open</div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mouse-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <rect x="6" y="3" width="12" height="18" rx="4"></rect>
+            <path d="M12 3v7"></path>
+            <path d="M6 10h12" fill="none"></path>
+        </svg>
+        <div class="right">Flag</div>
+    </div>
+
+    <div class="content">
+
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+        <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag svg-flag" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <line x1="5" y1="5" x2="5" y2="21"></line>
+                <line x1="19" y1="5" x2="19" y2="14"></line>
+                <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+            </svg>
+            <span class="sidebox"></span>
+        </div>
+    </div>
+
+    <div class="info">
+        <div class="info-left">
+            <div class="info-flag" title="Flag">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <line x1="5" y1="5" x2="5" y2="21"></line>
+                    <line x1="19" y1="5" x2="19" y2="14"></line>
+                    <path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                    <path d="M5 14a5 5 0 0 1 7 0a5 5 0 0 0 7 0"></path>
+                </svg>
+                
+                <span>10</span>
+            </div>
+
+            <div class="info-box" title="Boards">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-box" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <polyline points="12 3 20 7.5 20 16.5 12 21 4 16.5 4 7.5 12 3"></polyline>
+                    <line x1="12" y1="12" x2="20" y2="7.5"></line>
+                    <line x1="12" y1="12" x2="12" y2="21"></line>
+                    <line x1="12" y1="12" x2="4" y2="7.5"></line>
+                </svg>
+
+                <span>100</span>
+            </div>
+        </div>
+
+        <div class="info-timer">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-alarm" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <circle cx="12" cy="13" r="7"></circle>
+                <polyline points="12 10 12 13 14 13"></polyline>
+                <line x1="7" y1="4" x2="4.25" y2="6"></line>
+                <line x1="17" y1="4" x2="19.75" y2="6"></line>
+            </svg>
+
+            <span class="min">00:</span>
+            <span class="sec">00</span>
+        </div>
+    </div>
+
+    <div class="score">
+        <div class="score-board">
+            <div class="value">
+                <img src="pic/clock.png" alt="Clock">
+                <div class="score-value">00:00</div>
+            </div>
+            <div class="highest">
+                <img src="pic/thropy.png" alt="Thropy">
+                <div class="hi-score">00:00</div>
+            </div>
+        </div>
+        <a href="index.html">Play again!</a>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bomb svg-bomb" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="red" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M15.349 5.349l3.301 3.301a1.2 1.2 0 0 1 0 1.698l-.972 .972a7.5 7.5 0 1 1 -5 -5l.972 -.972a1.2 1.2 0 0 1 1.698 0z"></path>
+        <path d="M17 7l1.293 -1.293a2.414 2.414 0 0 0 .707 -1.707a1 1 0 0 1 1 -1h1"></path>
+        <path d="M7 13a3 3 0 0 1 3 -3"></path>
+    </svg>
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bomb svg-bomb" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="red" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M15.349 5.349l3.301 3.301a1.2 1.2 0 0 1 0 1.698l-.972 .972a7.5 7.5 0 1 1 -5 -5l.972 -.972a1.2 1.2 0 0 1 1.698 0z"></path>
+        <path d="M17 7l1.293 -1.293a2.414 2.414 0 0 0 .707 -1.707a1 1 0 0 1 1 -1h1"></path>
+        <path d="M7 13a3 3 0 0 1 3 -3"></path>
+    </svg>
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bomb svg-bomb" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="red" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M15.349 5.349l3.301 3.301a1.2 1.2 0 0 1 0 1.698l-.972 .972a7.5 7.5 0 1 1 -5 -5l.972 -.972a1.2 1.2 0 0 1 1.698 0z"></path>
+        <path d="M17 7l1.293 -1.293a2.414 2.414 0 0 0 .707 -1.707a1 1 0 0 1 1 -1h1"></path>
+        <path d="M7 13a3 3 0 0 1 3 -3"></path>
+    </svg>
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bomb svg-bomb" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="red" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M15.349 5.349l3.301 3.301a1.2 1.2 0 0 1 0 1.698l-.972 .972a7.5 7.5 0 1 1 -5 -5l.972 -.972a1.2 1.2 0 0 1 1.698 0z"></path>
+        <path d="M17 7l1.293 -1.293a2.414 2.414 0 0 0 .707 -1.707a1 1 0 0 1 1 -1h1"></path>
+        <path d="M7 13a3 3 0 0 1 3 -3"></path>
+    </svg>
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bomb svg-bomb" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="red" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M15.349 5.349l3.301 3.301a1.2 1.2 0 0 1 0 1.698l-.972 .972a7.5 7.5 0 1 1 -5 -5l.972 -.972a1.2 1.2 0 0 1 1.698 0z"></path>
+        <path d="M17 7l1.293 -1.293a2.414 2.414 0 0 0 .707 -1.707a1 1 0 0 1 1 -1h1"></path>
+        <path d="M7 13a3 3 0 0 1 3 -3"></path>
+    </svg>
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bomb svg-bomb" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="red" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M15.349 5.349l3.301 3.301a1.2 1.2 0 0 1 0 1.698l-.972 .972a7.5 7.5 0 1 1 -5 -5l.972 -.972a1.2 1.2 0 0 1 1.698 0z"></path>
+        <path d="M17 7l1.293 -1.293a2.414 2.414 0 0 0 .707 -1.707a1 1 0 0 1 1 -1h1"></path>
+        <path d="M7 13a3 3 0 0 1 3 -3"></path>
+    </svg>
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bomb svg-bomb" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="red" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M15.349 5.349l3.301 3.301a1.2 1.2 0 0 1 0 1.698l-.972 .972a7.5 7.5 0 1 1 -5 -5l.972 -.972a1.2 1.2 0 0 1 1.698 0z"></path>
+        <path d="M17 7l1.293 -1.293a2.414 2.414 0 0 0 .707 -1.707a1 1 0 0 1 1 -1h1"></path>
+        <path d="M7 13a3 3 0 0 1 3 -3"></path>
+    </svg>
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bomb svg-bomb" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="red" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M15.349 5.349l3.301 3.301a1.2 1.2 0 0 1 0 1.698l-.972 .972a7.5 7.5 0 1 1 -5 -5l.972 -.972a1.2 1.2 0 0 1 1.698 0z"></path>
+        <path d="M17 7l1.293 -1.293a2.414 2.414 0 0 0 .707 -1.707a1 1 0 0 1 1 -1h1"></path>
+        <path d="M7 13a3 3 0 0 1 3 -3"></path>
+    </svg>
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bomb svg-bomb" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="red" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M15.349 5.349l3.301 3.301a1.2 1.2 0 0 1 0 1.698l-.972 .972a7.5 7.5 0 1 1 -5 -5l.972 -.972a1.2 1.2 0 0 1 1.698 0z"></path>
+        <path d="M17 7l1.293 -1.293a2.414 2.414 0 0 0 .707 -1.707a1 1 0 0 1 1 -1h1"></path>
+        <path d="M7 13a3 3 0 0 1 3 -3"></path>
+    </svg>
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bomb svg-bomb" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="red" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M15.349 5.349l3.301 3.301a1.2 1.2 0 0 1 0 1.698l-.972 .972a7.5 7.5 0 1 1 -5 -5l.972 -.972a1.2 1.2 0 0 1 1.698 0z"></path>
+        <path d="M17 7l1.293 -1.293a2.414 2.414 0 0 0 .707 -1.707a1 1 0 0 1 1 -1h1"></path>
+        <path d="M7 13a3 3 0 0 1 3 -3"></path>
+    </svg>
+
+    <script src="app.js"></script>
+</body>
+</html>

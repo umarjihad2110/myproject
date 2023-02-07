@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+
+body{
+    font-family: 'Mulish', sans-serif;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+.kiri{
+    width: 40%;
+    background: rgb(242, 242, 242);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.logo{
+    margin: 10px auto;
+    display: flex;
+    gap: 10px;
+}
+.logo1{
+    width: 80px;
+    height: 72px;
+    background-image: url(kemenag.png);
+    background-size: cover;
+}
+
+.logo2{
+    width: 80px;
+    height: 80px;
+    background-image: url(logo.png);
+    background-size: cover;
+}
+.satu{
+    font-size: 30px;
+}
+
+.dua{
+    font-size: 25px;
+}
+
+.tiga{
+    font-size: 20px;
+    color: rgb(219, 48, 182);
+    user-select: none;
+}
+
+.empat{
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.gambar{
+    width: 100%;
+    height: 100%;
+    background-image: url(gambar.png);
+    background-size: cover;
+}
+.kanan{
+    width: 60%;
+    padding: 40px;
+    background: rgb(221, 236, 222);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    gap: 30px;
+}
+.video,.silahkan,form{
+    width: 65%;
+}
+.video{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.video a{
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.video a:hover{
+    color :rgb(29, 65, 69);
+    text-decoration: underline;
+}
+.silahkan{
+    margin-top: 40px;
+    text-align: center;
+    font-size: 25px;
+}
+
+form{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.username{
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"],input[type="password"]{
+    width: 100%;
+    padding: 20px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+input:hover{
+    background: rgb(255, 255, 255,.5);
+}
+.password{
+    display: flex;
+    flex-direction: column;
+}
+
+.lupa{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.lupa a{
+    text-decoration: none;
+}
+
+.lupa a:hover{
+    color: rgb(29, 65, 69);
+    text-decoration: underline;
+}
+
+.login{
+    display: flex;
+    gap: 15px;
+}
+.masuk,.cbt{
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+}
+button{
+    padding: 15px;
+    padding-left: 35px;
+    box-sizing: border-box;
+    position: relative;
+    border: none;
+    cursor: pointer;
+}
+button.masuk1{
+    background: rgb(42, 147, 224);
+    text-transform: uppercase;
+}
+
+button.masuk1 svg{
+    transform: rotate(180deg);
+}
+
+button.masuk1:hover{
+    background: rgb(42, 147, 224,.7);
+}
+
+button.cbt{
+    background: rgb(188, 241, 247);
+}
+
+button.cbt:hover{
+    background: rgb(42, 147, 224,.7);
+}
+svg{
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    left: 10px;
+}
+.hak-cipta{
+    margin-top: 70px;
+    display: flex;
+    justify-content: flex-end;
+    user-select: none;
+}
+
+@media (max-width: 600px){
+    body{
+        flex-direction: column;
+    }
+    .kiri{
+        width: 100%;
+    }
+    .satu{
+        font-size: 25px;
+    }
+    .dua{
+        font-size: 20px;
+    }
+    .tiga{
+        font-size: 20px;
+    }
+    .empat{
+        text-align: center;
+        font-size: 13px;
+    }
+    .kanan{
+        width: 100%;
+        padding: 25px;  
+        gap: 15px; 
+    }
+    .video,.silahkan,form{
+        width: 100%;
+    }
+    form{
+        margin-top: 10px;
+        gap: 5px;
+    }
+    .video a{
+        font-size: 15px;
+    }
+    .silahkan{
+        margin-top: 10px;
+        font-size: 20px;
+    }
+    input[type="text"],input[type="password"]{
+        padding: 15px;
+    }
+    .hak-cipta{
+        margin-top: 20px;
+    }
+}

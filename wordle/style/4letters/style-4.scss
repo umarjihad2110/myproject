@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier Prime', monospace;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    background: linear-gradient(45deg, #42275a, #734b6d);
+}
+
+.back{
+    display: flex;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    background-color: rgb(170, 170, 170);
+    cursor: pointer;
+
+    &:hover{
+        background-color: rgb(170, 170, 170,.7);
+    }
+
+    svg{
+        margin: auto;
+        color: black;
+    }
+}
+
+.content{
+    display: flex;
+    gap: 50px;
+
+    .words{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(6,1fr);
+        gap: 5px;
+        align-self: center;
+    
+        .word{
+            width: 65px;
+            height: 65px;
+            background-color: #aaa;
+            border-radius: 5px;
+            font-size: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: all .3s;
+            user-select: none;
+        }
+    
+        .border{
+            border: 2px solid black;
+        }
+    
+        .flip{
+            animation: flip .5s forwards;
+        }
+    }
+
+    .keyboard{
+        width: 55vw;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        align-self: center;
+        justify-content: center;
+
+        .top,.mid,.bottom{
+            display: flex;
+            gap: 5px;
+
+            div{
+                font-size: 25px;
+                padding: 5px;
+                text-transform: uppercase;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: rgb(170, 170, 170);
+                width: 100%;
+                border-radius: 5px;
+                cursor: pointer;
+                user-select: none;
+                transition: all .2s;
+                font-weight: 595;
+
+                &:hover{
+                    background-color: rgb(170, 170, 170,.7);
+                }
+            }
+
+            .enter{
+                font-size: 20px;
+                text-transform: capitalize;
+                padding: 5px 15px;
+            }
+
+            .green{
+                background-color: lime;
+
+                &:hover{
+                    background-color: rgb(0, 255, 0,.8);
+                }
+            }
+
+            .yellow{
+                background-color: #fad02c;
+
+                &:hover{
+                    background-color: rgb(250, 208, 44,.8);
+                }
+            }
+
+            .white{
+                background-color: #dee;
+
+                &:hover{
+                    background-color: rgb(221, 238, 238,.97);
+                }
+            }
+        }
+    }
+}
+
+.score{
+    padding: 50px;
+    border-radius: 10px;
+    position: fixed;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    display: none;
+    background: linear-gradient(45deg, rgb(115, 75, 109,.85), rgb(66, 39, 90,.85));
+
+    *{
+        color: #ddd
+    }
+    .won,.lost,.guess{
+        font-size: 25px;
+        text-align: center;
+        display: none;
+    }
+
+    .value{
+        font-size: 20px;
+        text-align: center;
+        display: none;
+    }
+
+    a{
+        padding: 5px;
+        border-radius: 5px;
+        background-color: lime;
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+        text-align: center;
+        margin: auto;
+    }
+
+    .guess{
+        padding: 5px 15px;
+        border-radius: 5px;
+        border: 1px solid black;
+        background-color: #734b6d;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: #111;
+    }
+}
+
+@keyframes flip {
+    0%{
+        transform: scaleY(1);
+    }
+    50%{
+        transform: scaleY(0);
+    }
+    100%{
+        transform: scaleY(1);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .back{
+        top: 20px;
+        left: 20px;
+    }
+
+    .content{
+        flex-direction: column;
+        gap: 20px;
+
+        .words{
+            .word{
+                width: 55px;
+                height: 55px;
+            }
+        }
+
+        .keyboard{
+            width: 98vw;
+
+            .top,.mid,.bottom{
+                div,.enter{
+                    font-size: 1rem;
+                    font-weight: 100;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .content{
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .back{
+        display: none;
+    }
+}

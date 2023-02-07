@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion | Temperature</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="icon" href="../pic/temp.png">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="../pic/temp.png" alt="Length" width="40">
+            <span>Temperature</span>
+        </div>
+        <div class="content">
+            <div class="left">
+                <input type="number" class="input" autofocus>
+                <select name="units" id="units" side="left">
+                    <option value="c">Celcius (°C)</option>
+                    <option value="f">Fahrenheit (°F)</option>
+                    <option value="r">Reaumur (°R)</option>
+                    <option value="k">Kelvin (°K)</option>
+                </select>
+            </div>
+            <div class="equal">=</div>
+            <div class="right">
+                <div class="output">0</div>
+                <select name="units" id="units" side="right">
+                    <option value="c">Celcius (°C)</option>
+                    <option value="f">Fahrenheit (°F)</option>
+                    <option value="r">Reaumur (°R)</option>
+                    <option value="k">Kelvin (°K)</option>
+                </select>
+            </div>
+        </div>
+        <div class="footer">
+            <button type="button" class="convert">Convert</button>
+            <div class="line"></div>
+            <a href="../index.html" class="length">Length</a>
+            <a href="../weight/weight.html" class="weight">Weight</a>
+            <a href="../time/time.html" class="time">Time</a>
+        </div>
+    </div>
+
+    <script src="temp-script.js"></script>
+</body>
+</html>

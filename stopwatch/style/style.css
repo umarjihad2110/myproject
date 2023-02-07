@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, #ffa17f, #00223e);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px;
+  background-color: #948e99;
+  border-radius: 5px;
+}
+.container .top {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+}
+.container .top .hour, .container .top .minute, .container .top .second, .container .top .milisecond {
+  background-color: #00223e;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container .top .hour-value, .container .top .minute-value, .container .top .second-value, .container .top .milisecond-value {
+  font-size: 40px;
+}
+.container .bottom {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.container .bottom * {
+  background-color: #ffa17f;
+  border-radius: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    background-color: transparent;
+    width: 100vw;
+  }
+  .container .top {
+    gap: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    gap: 1px;
+  }
+  .container .top .milisecond, .container .top .second, .container .top .minute, .container .top .hour {
+    border-radius: 0;
+    padding: 5px;
+  }
+  .container .top .milisecond-value, .container .top .second-value, .container .top .minute-value, .container .top .hour-value {
+    font-size: 30px;
+  }
+}/*# sourceMappingURL=style.css.map */

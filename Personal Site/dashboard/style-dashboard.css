@@ -1,0 +1,411 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+body{
+    padding: 95px 0;
+    min-height: 100vh;
+    background-color: rgb(11, 15, 46);
+    display: flex;
+    flex-direction: column;
+}
+
+.bar{
+    position: fixed;
+    left: 0;
+    top: 0;
+    /* display: flex; */
+    flex-direction: column;
+    width: 100%;
+    background-color: rgb(32, 96, 103);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: 5px;
+    z-index: 10;
+    gap: 5px;
+}
+
+.nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.img-logo{
+    border-radius: 50%;
+}
+
+.mid{
+    position: relative;
+    display: flex;
+    gap: 30px;
+    font-size: 18px;
+}
+
+.item{
+    color: black;
+    border-radius: 50px;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    position: relative;
+}
+
+.line{
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    bottom: 0;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255,.7);
+}
+
+.item:hover .line{
+    display: none;
+}
+
+.item:hover{
+    background-color: rgb(169, 170, 171,.3);
+}
+
+.side{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.search,.bel,.menu,.sign-in{
+    cursor: pointer;
+}
+
+.search,.bel,.menu{
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+}
+
+.menu{
+    display: none;
+}
+
+.bel{
+    position: relative;
+    /* background-color: rgb(169, 170, 171,.5); */
+}
+
+.bel:hover,.search:hover{
+    background-color: rgb(169, 170, 171,.5);
+}
+
+.notif{
+    display: none;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    top: -2px;
+    right: -2px;
+    box-shadow: 0 5px 10px #ccc;
+}
+
+.sign-in,.log-in{
+    padding: 8px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+    background-color: rgb(55, 132, 55);
+}
+
+.sign-in:hover,.log-in:hover{
+    background-color: rgb(55, 132, 55,.8);
+}
+
+.search-input{
+    width: 100%;
+    display: none;
+}
+
+.search-input input{
+    /* display: none; */
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: rgb(255, 255, 255,.7);
+    color: black;
+}
+
+.search-input input:hover{
+    background-color: rgb(255, 255, 255,.5);
+}
+
+.search-input input::placeholder{
+    color: black;
+}
+
+.mobile{
+    background-color: rgb(32, 96, 103);;
+    display: none;
+}
+
+.hidden{
+    display: none;
+}
+
+.inline{
+    display: inline;
+}
+
+.block{
+    display: block;
+}
+
+.no-radius{
+    border-radius: 0;
+}
+
+.mobile-item{
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.mobile-item:hover{
+    cursor: pointer;
+    background: rgb(127, 144, 146);
+}
+
+/*------------------ dashboard ---------------------*/
+
+.dashboard{
+    width: 100%;
+    height: 100%;
+    /* display: flex; */
+    flex-direction: column;
+    background-color: rgb(221, 222, 224,.1);
+    padding: 20px;
+    gap: 20px;
+    /* border-radius: 5px; */
+}
+
+.info{
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.samping{
+    display: flex;
+    flex-direction: column;
+    color: rgb(169, 170, 171);
+}
+
+.mail{
+    color: rgb(169, 170, 171);
+    text-decoration: none;
+}
+
+a.mail:hover{
+    text-decoration: underline;
+    color: white;
+}
+
+.biru{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #6cabdd;
+}
+
+.garis{
+    width: 100%;
+    height: 2px;
+    background-color: black;
+}
+
+.skill{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 20px;
+    border-radius: 5px;
+}
+
+.html,.css,.js{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(169, 170, 171,.5);
+    height: 150px;
+    gap: 10px;
+    border-radius: 5px;
+    font-size: 25px;
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+}
+
+.persen{
+    z-index: 5;
+    font-size: 70px;
+}
+
+.bobot{
+    width: 100%;
+    z-index: -1;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    position: absolute;
+    z-index: 1;
+    background-color: rgb(0, 255, 91);
+    align-self: flex-end;
+}
+
+.about{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 17px;
+}
+
+.education,.cod-exp,.goals{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid black;
+    color: rgb(169, 170, 171);
+}
+
+.footer{
+    margin-top: 50px;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: rgb(169, 170, 171);
+}
+
+.sosmed{
+    display: flex;
+    gap: 40px
+}
+
+.ig,.fb,.twt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 5px 20px rgb(0, 0, 0);
+    text-decoration: none;
+    transition: all .3s ;
+}
+
+.ig:hover,.fb:hover,.twt:hover{
+    transform: scale(1.1);
+}
+
+.ig{
+    background: linear-gradient(45deg, rgb(237, 229, 38), rgb(237, 38, 38), rgb(237, 38, 181), rgb(87, 38, 237) );
+}
+
+.fb{
+    background-color: #3F65A6;
+}
+
+.twt{
+    background-color: #00AAEC;
+}
+
+.sosmed svg{
+    width: 30px;
+    height: 30px;
+    color: white;
+}
+
+@keyframes percentage{
+    from{
+        height: 97%;
+    }
+    to{
+        height: 100%;
+    }
+}
+
+/*------------------------- event ------------------------*/
+
+.hidden{
+    display: none;
+}
+
+.show-flex{
+    display: flex;
+}
+
+.show-grid{
+    display: grid;
+}
+
+/*--------------------------- media-query ---------------------*/
+
+@media (max-width:768px){
+    body{
+        font-size: 12px;
+    }
+    .container{
+        padding: 5px
+    }
+    .mid{
+        display: none;
+    }
+    img{
+        width: 30px;
+    }
+    svg{
+        width: 15px;
+        height: 15px;
+    }
+    .mid,.side{
+        gap:5px;
+    }
+    .item{
+        padding: 5px;
+    }
+    .side{
+        gap: 5px;
+    }
+    .search,.menu,.bel{
+        padding: 5px;
+    }
+    .menu{
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+    }
+    .sign-in{
+        padding: 5px;
+    }
+}

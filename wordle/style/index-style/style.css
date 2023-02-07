@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime&family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Courier Prime", monospace;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background: linear-gradient(45deg, #734b6d, #42275a);
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+.content a {
+  padding: 15px;
+  border-radius: 10px;
+  background-color: rgb(170, 170, 170);
+  text-decoration: none;
+  color: black;
+}
+.content a:hover {
+  background-color: rgba(170, 170, 170, 0.7);
+}/*# sourceMappingURL=style.css.map */
