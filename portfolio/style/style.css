@@ -97,27 +97,6 @@ body {
   text-decoration: underline;
 }
 
-.mode {
-  position: fixed;
-  left: 0;
-  top: 50px;
-  background-color: #eee;
-  border-radius: 0 0 10px 0;
-  padding: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  z-index: 2;
-}
-.mode input {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  cursor: pointer;
-  accent-color: black;
-}
-
 .home {
   min-height: 100vh;
   display: flex;
@@ -274,7 +253,7 @@ body {
 }
 .skills-content {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 15px;
   background-color: #07554b;
@@ -293,7 +272,7 @@ body {
   transition: all 0.3s;
 }
 .skills-content-item:hover {
-  background-color: black;
+  background-color: #111;
 }
 .skills-content-item img {
   width: 50px;

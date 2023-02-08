@@ -193,29 +193,20 @@ body{
     display: none;
 }
 
-@media screen and (max-width: 768px) {
-    *{
-        display: none;
-    }
-    .rules{
-        width: 95vw;
-        justify-content: center;
-    }
+.mobile-display{
+    display: none;
+}
 
-    .content{
-        width: 95vw;
-        height: 95vw;
-
-        grid-template-columns: repeat(10,1fr);
-        grid-template-rows: repeat(10,1fr);
-    }
-
-    .info{
-        width: 95vw;
-        justify-content: space-between;
-
-        &-timer{
-            margin: 0;
+@media screen and (max-width: 800px) {
+    body{
+        padding: 0 5px;
+        *:not(.mobile-display){
+            display: none;
         }
+    }
+
+    .mobile-display{
+        display: block;
+        color: #111;
     }
 }

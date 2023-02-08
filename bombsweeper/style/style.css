@@ -45,7 +45,6 @@ body {
   cursor: default;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 .content .box .svg-flag {
@@ -169,25 +168,19 @@ body {
   display: none;
 }
 
-@media screen and (max-width: 768px) {
-  * {
+.mobile-display {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    padding: 0 5px;
+  }
+  body *:not(.mobile-display) {
     display: none;
   }
-  .rules {
-    width: 95vw;
-    justify-content: center;
-  }
-  .content {
-    width: 95vw;
-    height: 95vw;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(10, 1fr);
-  }
-  .info {
-    width: 95vw;
-    justify-content: space-between;
-  }
-  .info-timer {
-    margin: 0;
+  .mobile-display {
+    display: block;
+    color: #111;
   }
 }/*# sourceMappingURL=style.css.map */
