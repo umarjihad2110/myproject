@@ -9,17 +9,28 @@ const nameList = document.querySelector(".name-list")
 const sumPeople = document.querySelector("#people")
 const sumGroups = document.querySelector("#groups")
 
+const generate = document.querySelector(".generate")
+
+var arrNames = []
+
 let numberList = 1
 namesInput.addEventListener("keydown",function(el){
     var x = el.key
     var name = namesInput.value
     var people = parseInt(sumPeople.value)
-    var groups = parseInt(sumGroups.value)
+    // var groups = parseInt(sumGroups.value)
 
     if (name != "" && x == "Enter" && numberList <= people){
+
+        // add names to array
+        arrNames.push(name)
         
         if (numberList == people){
-            document.querySelector(".generate").style.display = "inline"
+            generate.style.display = "inline"
+        }
+        
+        else {
+            generate.style.display = "none"
         }
 
         out(name)
@@ -41,7 +52,7 @@ namesInput.addEventListener("keydown",function(el){
         nameList.appendChild(li)
         nameList.style.display = "flex"
 
-        // remove names
+        // remove names form list
         number.addEventListener("click",function(){
             nameList.removeChild(number.parentElement)
             let p = parseInt(number.innerText)
@@ -55,10 +66,110 @@ namesInput.addEventListener("keydown",function(el){
                 }
             })
 
-            document.querySelector(".generate").style.display = "none"
+            // remove names from array
+            let index = arrNames.indexOf(name)
+            arrNames.splice(index,1)
+
+            generate.style.display = "none"
         })
 
         numberList++
+
+        namesInput.value = ""
     }
     
 })
+
+// generate groups
+const result = document.querySelector(".result")
+
+// click genearate button
+let check = 0
+generate.addEventListener("click",function(){
+    let p = parseInt(sumPeople.value)
+    let q = numberList - 1
+    
+    if (p != q){
+        alert("The number of people does not match")
+    }
+
+    else if (p == q){
+        out("hai")
+
+        result.innerHTML = ""
+        newArr = []
+        inputNames()
+        generateGroup()
+    }
+})
+
+// input list to result element
+function generateGroup(){
+    
+
+    let p = parseInt(sumPeople.value)
+    let q = parseInt(sumGroups.value)
+
+    // make ul
+    for (let i = 0 ; i < q ; i++){
+        var ul = document.createElement("ol")
+        ul.classList.add("list-result")
+
+        var h5 = document.createElement("h5")
+        if (i == 0){
+            h5.innerText = "1st Group"
+        }
+        else if (i == 1){
+            h5.innerText = "2nd Group"
+        }
+        else {
+            h5.innerText = `${i+1}th Group` 
+        }
+        ul.appendChild(h5)
+        
+        // input li into ul
+        for (let j = 0 ; j < Math.floor(p/q) ; j++){
+            var li = document.createElement("li")
+            li.classList.add("list-item")
+            
+            ul.appendChild(li)
+        }
+
+        result.appendChild(ul)
+    }
+
+    const listResult = document.querySelectorAll(".list-result")
+
+    // input li into ul
+    for (let j = 0 ; j < p % q ; j++){
+        var li = document.createElement("li")
+        li.classList.add("list-item")
+        
+        listResult[j].appendChild(li)
+        result.appendChild(ul)
+    }
+
+    const listItem = document.querySelectorAll(".list-item")
+
+    listItem.forEach(function(el,i){
+        el.innerText = newArr[i]
+    })
+}
+
+// input name on the list
+let newArr = []
+function inputNames(){
+    
+    while(newArr.length < arrNames.length){
+        let random = Math.floor(Math.random()*(arrNames.length) + 0)
+        
+        if (newArr.includes(arrNames[random])){
+            inputNames()
+        }
+        
+        else {
+            newArr.push(arrNames[random])
+        }
+    }
+}
+
