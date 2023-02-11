@@ -5,14 +5,23 @@ document.querySelector(".names").style.width = `${document.querySelector(".conte
 // input the names
 const namesInput = document.querySelector("#name")
 const nameList = document.querySelector(".name-list")
-out(namesInput)
+
+const sumPeople = document.querySelector("#people")
+const sumGroups = document.querySelector("#groups")
 
 let numberList = 1
 namesInput.addEventListener("keydown",function(el){
     var x = el.key
     var name = namesInput.value
+    var people = parseInt(sumPeople.value)
+    var groups = parseInt(sumGroups.value)
 
-    if (name != "" && x == "Enter"){
+    if (name != "" && x == "Enter" && numberList <= people){
+        
+        if (numberList == people){
+            document.querySelector(".generate").style.display = "inline"
+        }
+
         out(name)
 
         var number = document.createElement("span")
@@ -24,15 +33,32 @@ namesInput.addEventListener("keydown",function(el){
         number.innerText = numberList
         member.innerText = name
 
+        number.title = "Click to remove the name"
+
         li.appendChild(number)
         li.appendChild(member)
 
         nameList.appendChild(li)
         nameList.style.display = "flex"
+
+        // remove names
+        number.addEventListener("click",function(){
+            nameList.removeChild(number.parentElement)
+            let p = parseInt(number.innerText)
+            numberList--
+
+            document.querySelectorAll(".color").forEach(function(el){
+                let q = parseInt(el.innerText)
+                if (q > p){
+                    q--
+                    el.innerText = q
+                }
+            })
+
+            document.querySelector(".generate").style.display = "none"
+        })
+
         numberList++
-
-        // namesInput.value = ""
     }
+    
 })
-
-// remove names

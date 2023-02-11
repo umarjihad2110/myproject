@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Poppins&display=swap');
 
 *{
     margin: 0;
@@ -61,15 +61,35 @@ body{
     li{
         padding: 5px;
         border-radius: 5px;
+        position: relative;
 
         .color{
             border-radius: 2px;
             padding: 0 4px;
             background-color: rgb(255,255,255,.5);
-        }
+            font-family: 'Nunito', sans-serif;
+            user-select: none;
+            transition: all .1s;
 
-        &:hover{
-            background-color: red;
+            &:hover{
+                background-color: red;
+                cursor: pointer;
+            }
         }
+    }
+}
+
+.generate{
+    padding: 5px 8px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(255,255,255,.5);
+    transition: all .2s;
+    font-size: 1rem;
+    display: none;
+
+    &:hover{
+        background-color: rgb(255,255,255,.9);
     }
 }
