@@ -33,8 +33,6 @@ namesInput.addEventListener("keydown",function(el){
             generate.style.display = "none"
         }
 
-        out(name)
-
         var number = document.createElement("span")
         var member = document.createElement("span")
         var li = document.createElement("li")
@@ -94,8 +92,6 @@ generate.addEventListener("click",function(){
     }
 
     else if (p == q){
-        out("hai")
-
         result.innerHTML = ""
         newArr = []
         inputNames()

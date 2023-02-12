@@ -8,12 +8,11 @@
 }
 
 body{
-    max-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 35px;
+    padding: 35px 0;
     background: linear-gradient(to right, #009245, #fcee21);
 }
 
@@ -52,6 +51,7 @@ body{
 }
 
 .result{
+    margin-top: 15px;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -61,6 +61,10 @@ body{
         border-radius: 5px;
         background-color: rgb(255,255,255,.2);
 
+        h5{
+            border-bottom: 1px solid black;
+        }
+
         li{
             font-family: 'Nunito', sans-serif;
             margin-left: 15px;
@@ -68,46 +72,54 @@ body{
     }
 }
 
-.name-list{
-    margin-top: 20px;
-    width: 90vw;
-    display: flex;
-    list-style: none;
-    gap: 10px;
-    flex-wrap: wrap;
-
-    li{
-        padding: 5px;
-        border-radius: 5px;
-
-        .color{
-            border-radius: 2px;
-            padding: 0 4px;
-            background-color: rgb(255,255,255,.5);
-            font-family: 'Nunito', sans-serif;
-            user-select: none;
-            transition: all .1s;
-
-            &:hover{
-                background-color: red;
-                cursor: pointer;
+.wrap{
+    .name-list{
+        margin-top: 20px;
+        width: 90vw;
+        display: flex;
+        list-style: none;
+        gap: 10px;
+        flex-wrap: wrap;
+    
+        li{
+            padding: 5px;
+            border-radius: 5px;
+    
+            .color{
+                border-radius: 2px;
+                padding: 0 4px;
+                background-color: rgb(255,255,255,.5);
+                font-family: 'Nunito', sans-serif;
+                user-select: none;
+                transition: all .1s;
+    
+                &:hover{
+                    background-color: red;
+                    cursor: pointer;
+                }
             }
+        }
+    }
+    
+    .generate{
+        margin-top: 15px;
+        padding: 5px 8px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        background-color: rgb(255,255,255,.5);
+        transition: all .2s;
+        font-size: 1rem;
+        display: none;
+    
+        &:hover{
+            background-color: rgb(255,255,255,.9);
         }
     }
 }
 
-.generate{
-    margin-top: 15px;
-    padding: 5px 8px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    background-color: rgb(255,255,255,.5);
-    transition: all .2s;
-    font-size: 1rem;
-    display: none;
-
-    &:hover{
-        background-color: rgb(255,255,255,.9);
+@media screen and (max-width: 600px) {
+    body{
+        padding: 35px 10px;
     }
 }

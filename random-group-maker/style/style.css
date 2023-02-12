@@ -7,12 +7,11 @@
 }
 
 body {
-  max-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 35px;
+  padding: 35px 0;
   background: linear-gradient(to right, #009245, #fcee21);
 }
 
@@ -47,6 +46,7 @@ body {
 }
 
 .result {
+  margin-top: 15px;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -56,12 +56,15 @@ body {
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.2);
 }
+.result ol h5 {
+  border-bottom: 1px solid black;
+}
 .result ol li {
   font-family: "Nunito", sans-serif;
   margin-left: 15px;
 }
 
-.name-list {
+.wrap .name-list {
   margin-top: 20px;
   width: 90vw;
   display: flex;
@@ -69,11 +72,11 @@ body {
   gap: 10px;
   flex-wrap: wrap;
 }
-.name-list li {
+.wrap .name-list li {
   padding: 5px;
   border-radius: 5px;
 }
-.name-list li .color {
+.wrap .name-list li .color {
   border-radius: 2px;
   padding: 0 4px;
   background-color: rgba(255, 255, 255, 0.5);
@@ -83,12 +86,11 @@ body {
           user-select: none;
   transition: all 0.1s;
 }
-.name-list li .color:hover {
+.wrap .name-list li .color:hover {
   background-color: red;
   cursor: pointer;
 }
-
-.generate {
+.wrap .generate {
   margin-top: 15px;
   padding: 5px 8px;
   border-radius: 5px;
@@ -99,6 +101,12 @@ body {
   font-size: 1rem;
   display: none;
 }
-.generate:hover {
+.wrap .generate:hover {
   background-color: rgba(255, 255, 255, 0.9);
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    padding: 35px 10px;
+  }
 }/*# sourceMappingURL=style.css.map */
