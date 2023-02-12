@@ -42,6 +42,7 @@ body {
 }
 
 .wrap {
+  width: calc(100vw - 40px);
   display: flex;
   flex-direction: column;
 }

@@ -123,6 +123,14 @@ namesInput.addEventListener("keydown",function(el){
             if (p != numberList - 1 && array.includes(x)){
                 result.innerHTML = ''
             }
+
+            if (sumGroups.value == ""){
+                generate.style.display = "none"
+            }
+
+            else {
+                generate.style.display = "inline"
+            }
         })
 
         numberList++
