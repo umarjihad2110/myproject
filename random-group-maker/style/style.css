@@ -41,25 +41,10 @@ body {
   width: 100%;
 }
 
-.result {
-  margin-top: 15px;
+.wrap {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  flex-direction: column;
 }
-.result ol {
-  padding: 10px;
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.2);
-}
-.result ol h5 {
-  border-bottom: 1px solid black;
-}
-.result ol li {
-  font-family: "Nunito", sans-serif;
-  margin-left: 15px;
-}
-
 .wrap .name-list {
   margin-top: 20px;
   width: 90vw;
@@ -88,6 +73,7 @@ body {
   cursor: pointer;
 }
 .wrap .generate {
+  align-self: flex-start;
   margin-top: 15px;
   padding: 5px 8px;
   border-radius: 5px;
@@ -100,6 +86,25 @@ body {
 }
 .wrap .generate:hover {
   background-color: rgba(255, 255, 255, 0.9);
+}
+.wrap .result {
+  align-self: center;
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.wrap .result ol {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.wrap .result ol h5 {
+  border-bottom: 1px solid black;
+}
+.wrap .result ol li {
+  font-family: "Nunito", sans-serif;
+  margin-left: 15px;
 }
 
 @media screen and (max-width: 600px) {

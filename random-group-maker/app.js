@@ -4,12 +4,31 @@ window.addEventListener("load",function(){
     document.querySelector(".names").style.width = `${document.querySelector(".content").clientWidth}px`
 })
 
+// set the focus input
+const sumPeople = document.querySelector("#people")
+const sumGroups = document.querySelector("#groups")
+
+sumPeople.addEventListener("keyup",function(el){
+    let x = el.key
+    let p = el.value
+
+    if (x == "Enter" && p != ""){
+        sumGroups.focus()
+    }
+})
+
+sumGroups.addEventListener("keyup",function(el){
+    let x = el.key
+    let p = el.value
+
+    if (x == "Enter" && p != ""){
+        namesInput.focus()
+    }
+})
+
 // input the names
 const namesInput = document.querySelector("#name")
 const nameList = document.querySelector(".name-list")
-
-const sumPeople = document.querySelector("#people")
-const sumGroups = document.querySelector("#groups")
 
 const generate = document.querySelector(".generate")
 
@@ -96,10 +115,12 @@ namesInput.addEventListener("keydown",function(el){
         })
 
         // the number of group change
-        sumGroups.addEventListener("keyup",function(){
+        sumGroups.addEventListener("keyup",function(el){
             let p = parseInt(sumGroups.value)
+            let array = ["Backspace","ArrowUp","ArrowDown","0","1",'2',"3","4",'5',"6","7",'8',"9"]
+            let x = el.key
 
-            if (p != numberList - 1){
+            if (p != numberList - 1 && array.includes(x)){
                 result.innerHTML = ''
             }
         })

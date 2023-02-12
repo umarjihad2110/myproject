@@ -46,29 +46,10 @@ body{
     }
 }
 
-.result{
-    margin-top: 15px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-
-    ol{
-        padding: 10px;
-        border-radius: 5px;
-        background-color: rgb(255,255,255,.2);
-
-        h5{
-            border-bottom: 1px solid black;
-        }
-
-        li{
-            font-family: 'Nunito', sans-serif;
-            margin-left: 15px;
-        }
-    }
-}
-
 .wrap{
+    display: flex;
+    flex-direction: column;
+
     .name-list{
         margin-top: 20px;
         width: 90vw;
@@ -99,6 +80,7 @@ body{
     }
     
     .generate{
+        align-self: flex-start;
         margin-top: 15px;
         padding: 5px 8px;
         border-radius: 5px;
@@ -111,6 +93,29 @@ body{
     
         &:hover{
             background-color: rgb(255,255,255,.9);
+        }
+    }
+
+    .result{
+        align-self: center;
+        margin-top: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    
+        ol{
+            padding: 10px;
+            border-radius: 5px;
+            background-color: rgb(255,255,255,.2);
+    
+            h5{
+                border-bottom: 1px solid black;
+            }
+    
+            li{
+                font-family: 'Nunito', sans-serif;
+                margin-left: 15px;
+            }
         }
     }
 }
