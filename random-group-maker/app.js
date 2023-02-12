@@ -18,7 +18,6 @@ namesInput.addEventListener("keydown",function(el){
     var x = el.key
     var name = namesInput.value
     var people = parseInt(sumPeople.value)
-    // var groups = parseInt(sumGroups.value)
 
     if (name != "" && x == "Enter" && numberList <= people){
 
@@ -68,7 +67,9 @@ namesInput.addEventListener("keydown",function(el){
             let index = arrNames.indexOf(name)
             arrNames.splice(index,1)
 
-            generate.style.display = "none"
+            if (people != numberList - 1){
+                generate.style.display = "none"
+            }
         })
 
         numberList++
@@ -93,8 +94,8 @@ generate.addEventListener("click",function(){
 
     else if (p == q){
         result.innerHTML = ""
-        newArr = []
-        inputNames()
+
+        shuffleArray()
         generateGroup()
     }
 })
@@ -148,24 +149,11 @@ function generateGroup(){
     const listItem = document.querySelectorAll(".list-item")
 
     listItem.forEach(function(el,i){
-        el.innerText = newArr[i]
+        el.innerText = arrNames[i]
     })
 }
 
-// input name on the list
-let newArr = []
-function inputNames(){
-    
-    while(newArr.length < arrNames.length){
-        let random = Math.floor(Math.random()*(arrNames.length) + 0)
-        
-        if (newArr.includes(arrNames[random])){
-            inputNames()
-        }
-        
-        else {
-            newArr.push(arrNames[random])
-        }
-    }
+function shuffleArray() {
+    arrNames.sort(() => Math.random() - 0.5);
+    return arrNames
 }
-

@@ -12,7 +12,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 35px 0;
+    padding: 35px 20px;
     background: linear-gradient(to right, #009245, #fcee21);
 }
 
@@ -46,10 +46,6 @@ body{
     }
 }
 
-.result,.name-list{
-    display: none;
-}
-
 .result{
     margin-top: 15px;
     display: flex;
@@ -80,6 +76,7 @@ body{
         list-style: none;
         gap: 10px;
         flex-wrap: wrap;
+        display: none;
     
         li{
             padding: 5px;
