@@ -1,6 +1,8 @@
 var out = console.log.bind(document)
 
-document.querySelector(".names").style.width = `${document.querySelector(".content").clientWidth}px`
+window.addEventListener("load",function(){
+    document.querySelector(".names").style.width = `${document.querySelector(".content").clientWidth}px`
+})
 
 // input the names
 const namesInput = document.querySelector("#name")
@@ -67,8 +69,38 @@ namesInput.addEventListener("keydown",function(el){
             let index = arrNames.indexOf(name)
             arrNames.splice(index,1)
 
-            if (people != numberList - 1){
+            let q = parseInt(sumPeople.value)
+
+            if (q != numberList - 1){
                 generate.style.display = "none"
+                result.innerHTML = ''
+            }
+
+            else {
+                generate.style.display = "inline"
+            }
+        })
+
+        // number of people change
+        sumPeople.addEventListener("keyup",function(){
+            let p = parseInt(sumPeople.value)
+
+            if (p != numberList - 1){
+                generate.style.display = "none"
+                result.innerHTML = ''
+            }
+
+            else{
+                generate.style.display = "inline"
+            }
+        })
+
+        // the number of group change
+        sumGroups.addEventListener("keyup",function(){
+            let p = parseInt(sumGroups.value)
+
+            if (p != numberList - 1){
+                result.innerHTML = ''
             }
         })
 
@@ -88,13 +120,13 @@ generate.addEventListener("click",function(){
     let p = parseInt(sumPeople.value)
     let q = numberList - 1
     
+    // the number doesn't match
     if (p != q){
         alert("The number of people does not match")
     }
 
     else if (p == q){
         result.innerHTML = ""
-
         shuffleArray()
         generateGroup()
     }
@@ -137,13 +169,15 @@ function generateGroup(){
 
     const listResult = document.querySelectorAll(".list-result")
 
-    // input li into ul
-    for (let j = 0 ; j < p % q ; j++){
-        var li = document.createElement("li")
-        li.classList.add("list-item")
-        
-        listResult[j].appendChild(li)
-        result.appendChild(ul)
+    // input the rest of li into ul
+    if (p % q != 0){
+        for (let j = 0 ; j < p % q ; j++){
+            var li = document.createElement("li")
+            li.classList.add("list-item")
+            
+            listResult[j].appendChild(li)
+            result.appendChild(ul)
+        }
     }
 
     const listItem = document.querySelectorAll(".list-item")
@@ -153,6 +187,7 @@ function generateGroup(){
     })
 }
 
+// shuffle array of names
 function shuffleArray() {
     arrNames.sort(() => Math.random() - 0.5);
     return arrNames
