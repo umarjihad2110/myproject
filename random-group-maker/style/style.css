@@ -95,17 +95,13 @@ body {
   flex-wrap: wrap;
   gap: 10px;
 }
-.wrap .result ol {
-  padding: 10px;
+.wrap .result ul {
+  padding: 10px 15px;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.2);
 }
-.wrap .result ol h5 {
+.wrap .result ul h5 {
   border-bottom: 1px solid black;
-}
-.wrap .result ol li {
-  font-family: "Nunito", sans-serif;
-  margin-left: 15px;
 }
 
 @media screen and (max-width: 600px) {

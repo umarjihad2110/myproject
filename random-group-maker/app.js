@@ -173,7 +173,7 @@ function generateGroup(){
 
     // make ul
     for (let i = 0 ; i < q ; i++){
-        var ul = document.createElement("ol")
+        var ul = document.createElement("ul")
         ul.classList.add("list-result")
 
         var h5 = document.createElement("h5")

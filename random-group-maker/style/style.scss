@@ -104,18 +104,13 @@ body{
         flex-wrap: wrap;
         gap: 10px;
     
-        ol{
-            padding: 10px;
+        ul{
+            padding: 10px 15px;
             border-radius: 5px;
             background-color: rgb(255,255,255,.2);
     
             h5{
                 border-bottom: 1px solid black;
-            }
-    
-            li{
-                font-family: 'Nunito', sans-serif;
-                margin-left: 15px;
             }
         }
     }
