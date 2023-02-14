@@ -254,7 +254,7 @@ document.addEventListener("keydown",function(event){
                 
                 setTimeout(() => {
                     enter = true
-                }, 1500);
+                }, 1200);
             }, 1200);
         }
     }
@@ -382,7 +382,7 @@ keys.forEach(function(key,index){
                     
                     setTimeout(() => {
                         enter = true
-                    }, 1500);
+                    }, 1200);
                 }, 1200);
             }
         }

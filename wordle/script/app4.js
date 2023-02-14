@@ -248,7 +248,7 @@ document.addEventListener("keydown",function(event){
                 
                 setTimeout(() => {
                     enter = true
-                }, 1700);
+                }, 1500);
             }, 900);
         }
     }
@@ -371,7 +371,7 @@ keys.forEach(function(key,index){
                     
                     setTimeout(() => {
                         enter = true
-                    }, 1700);
+                    }, 1500);
                 }, 900);
             }
         }
