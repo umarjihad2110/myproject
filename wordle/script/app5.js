@@ -22,7 +22,6 @@ for (let i = 0 ; i < 5 ; i++){
     guessWord[i] = guessWords5[random].slice(i,i+1)
     wordguess += guessWord[i]
 }
-out(wordguess)
 
 let i = 0
 var right;

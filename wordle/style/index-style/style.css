@@ -12,7 +12,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  background: linear-gradient(45deg, #734b6d, #42275a);
+  background-color: #0f7a65;
   align-items: center;
   justify-content: center;
 }

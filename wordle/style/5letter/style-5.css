@@ -14,7 +14,7 @@ body {
   align-items: center;
   flex-direction: column;
   gap: 20px;
-  background: linear-gradient(45deg, #42275a, #734b6d);
+  background-color: #0f7a65;
 }
 
 .back {
@@ -61,15 +61,13 @@ body {
   transition: all 0.3s;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 .content .words .border {
   border: 2px solid black;
 }
 .content .words .flip {
-  -webkit-animation: flip 0.5s forwards;
-          animation: flip 0.5s forwards;
+  animation: flip 0.5s forwards;
 }
 .content .keyboard {
   width: 55vw;
@@ -96,7 +94,6 @@ body {
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   transition: all 0.2s;
   font-weight: 595;
@@ -169,18 +166,6 @@ body {
   text-transform: uppercase;
   font-weight: bold;
   color: #111;
-}
-
-@-webkit-keyframes flip {
-  0% {
-    transform: scaleY(1);
-  }
-  50% {
-    transform: scaleY(0);
-  }
-  100% {
-    transform: scaleY(1);
-  }
 }
 
 @keyframes flip {
