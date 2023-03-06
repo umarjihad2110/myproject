@@ -147,7 +147,7 @@ body{
     gap: 10px;
     align-items: center;
     display: none;
-    background: linear-gradient(45deg, rgb(115, 75, 109,.85), rgb(66, 39, 90,.85));
+    background-color: rgba(255,255,255,.5);
 
     *{
         color: #ddd
@@ -156,12 +156,14 @@ body{
         font-size: 25px;
         text-align: center;
         display: none;
+        color: black;
     }
 
     .value{
         font-size: 20px;
         text-align: center;
         display: none;
+        color: black;
     }
 
     a{

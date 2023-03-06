@@ -133,7 +133,7 @@ body {
   gap: 10px;
   align-items: center;
   display: none;
-  background: linear-gradient(45deg, rgba(115, 75, 109, 0.85), rgba(66, 39, 90, 0.85));
+  background-color: rgba(255, 255, 255, 0.5);
 }
 .score * {
   color: #ddd;
@@ -142,11 +142,13 @@ body {
   font-size: 25px;
   text-align: center;
   display: none;
+  color: black;
 }
 .score .value {
   font-size: 20px;
   text-align: center;
   display: none;
+  color: black;
 }
 .score a {
   padding: 5px;
