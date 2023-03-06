@@ -36,9 +36,24 @@ body {
 .content .names {
   margin-top: 20px;
   align-self: center;
+  position: relative;
 }
 .content .names input {
   width: 100%;
+}
+.content .names .enter {
+  border-radius: 5px;
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  transition: all 0.2s;
+}
+.content .names .enter:hover {
+  background-color: #ddd;
 }
 
 .wrap {

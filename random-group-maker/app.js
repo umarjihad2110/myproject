@@ -2,6 +2,13 @@ var out = console.log.bind(document)
 
 window.addEventListener("load",function(){
     document.querySelector(".names").style.width = `${document.querySelector(".content").clientWidth}px`
+
+    // enter height and width
+    document.querySelector(".enter").style.height = `${document.querySelector("#name").clientHeight}px`
+    document.querySelector(".enter").style.width = `${document.querySelector("#name").clientHeight}px`
+
+    // name input padding
+    this.document.querySelector("#name").style.paddingRight = `${document.querySelector(".enter").clientWidth + 5}px`
 })
 
 // set the focus input
@@ -30,118 +37,131 @@ sumGroups.addEventListener("keyup",function(el){
 const namesInput = document.querySelector("#name")
 const nameList = document.querySelector(".name-list")
 
+const enter = document.querySelector(".enter")
+
 const generate = document.querySelector(".generate")
 
 var arrNames = []
 
 let numberList = 1
+let clickEnter = false;
 namesInput.addEventListener("keydown",function(el){
+    enter.addEventListener("click",function(){
+        out("hai")
+        clickEnter = true;
+        out(clickEnter)
+    })
+
+    if (name != "" && (x == "Enter" || clickEnter) && numberList <= people){
+        enterName()
+    }
+    
+})
+
+// function enter names
+function enterName(){
     var x = el.key
     var name = namesInput.value
     var people = parseInt(sumPeople.value)
 
-    if (name != "" && x == "Enter" && numberList <= people){
-
-        // add names to array
-        arrNames.push(name)
+    // add names to array
+    arrNames.push(name)
         
-        if (numberList == people){
+    if (numberList == people){
+        generate.style.display = "inline"
+    }
+    
+    else {
+        generate.style.display = "none"
+    }
+
+    var number = document.createElement("span")
+    var member = document.createElement("span")
+    var li = document.createElement("li")
+
+    number.classList.add("color")
+
+    number.innerText = numberList
+    member.innerText = name
+
+    number.title = "Click to remove the name"
+
+    li.appendChild(number)
+    li.appendChild(member)
+
+    nameList.appendChild(li)
+    nameList.style.display = "flex"
+
+    // remove names form list
+    number.addEventListener("click",function(){
+        nameList.removeChild(number.parentElement)
+        let p = parseInt(number.innerText)
+        numberList--
+
+        document.querySelectorAll(".color").forEach(function(el){
+            let q = parseInt(el.innerText)
+            if (q > p){
+                q--
+                el.innerText = q
+            }
+        })
+
+        // remove names from array
+        let index = arrNames.indexOf(name)
+        arrNames.splice(index,1)
+
+        let q = parseInt(sumPeople.value)
+
+        if (q != numberList - 1){
+            generate.style.display = "none"
+            result.innerHTML = ''
+        }
+
+        else {
             generate.style.display = "inline"
         }
-        
-        else {
+    })
+
+    // number of people change
+    sumPeople.addEventListener("keyup",function(){
+        let p = parseInt(sumPeople.value)
+
+        if (p != numberList - 1){
+            generate.style.display = "none"
+            result.innerHTML = ''
+        }
+
+        else{
+            generate.style.display = "inline"
+        }
+    })
+
+    // the number of group change
+    sumGroups.addEventListener("keyup",function(el){
+        let p = parseInt(sumGroups.value)
+        let array = ["Backspace","ArrowUp","ArrowDown","0","1",'2',"3","4",'5',"6","7",'8',"9"]
+        let x = el.key
+        let q = parseInt(sumPeople.value)
+
+        if (p != numberList - 1 && array.includes(x)){
+            result.innerHTML = ''
+        }
+
+        if (sumGroups.value == ""){
             generate.style.display = "none"
         }
 
-        var number = document.createElement("span")
-        var member = document.createElement("span")
-        var li = document.createElement("li")
-
-        number.classList.add("color")
-
-        number.innerText = numberList
-        member.innerText = name
-
-        number.title = "Click to remove the name"
-
-        li.appendChild(number)
-        li.appendChild(member)
-
-        nameList.appendChild(li)
-        nameList.style.display = "flex"
-
-        // remove names form list
-        number.addEventListener("click",function(){
-            nameList.removeChild(number.parentElement)
-            let p = parseInt(number.innerText)
-            numberList--
-
-            document.querySelectorAll(".color").forEach(function(el){
-                let q = parseInt(el.innerText)
-                if (q > p){
-                    q--
-                    el.innerText = q
-                }
-            })
-
-            // remove names from array
-            let index = arrNames.indexOf(name)
-            arrNames.splice(index,1)
-
-            let q = parseInt(sumPeople.value)
-
-            if (q != numberList - 1){
-                generate.style.display = "none"
-                result.innerHTML = ''
-            }
-
-            else {
+        else {
+            if (numberList > 1 && q == numberList - 1){
                 generate.style.display = "inline"
             }
-        })
+        }
+    })
 
-        // number of people change
-        sumPeople.addEventListener("keyup",function(){
-            let p = parseInt(sumPeople.value)
+    numberList++
 
-            if (p != numberList - 1){
-                generate.style.display = "none"
-                result.innerHTML = ''
-            }
-
-            else{
-                generate.style.display = "inline"
-            }
-        })
-
-        // the number of group change
-        sumGroups.addEventListener("keyup",function(el){
-            let p = parseInt(sumGroups.value)
-            let array = ["Backspace","ArrowUp","ArrowDown","0","1",'2',"3","4",'5',"6","7",'8',"9"]
-            let x = el.key
-            let q = parseInt(sumPeople.value)
-
-            if (p != numberList - 1 && array.includes(x)){
-                result.innerHTML = ''
-            }
-
-            if (sumGroups.value == ""){
-                generate.style.display = "none"
-            }
-
-            else {
-                if (numberList > 1 && q == numberList - 1){
-                    generate.style.display = "inline"
-                }
-            }
-        })
-
-        numberList++
-
-        namesInput.value = ""
-    }
-    
-})
+    namesInput.value = ""
+}
 
 // generate groups
 const result = document.querySelector(".result")
