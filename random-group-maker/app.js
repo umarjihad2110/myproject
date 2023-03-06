@@ -33,40 +33,45 @@ sumGroups.addEventListener("keyup",function(el){
     }
 })
 
+// click enter
+const enter = document.querySelector(".enter")
+
+enter.addEventListener("click",function(){
+    let name = namesInput.value
+    let people = parseInt(sumPeople.value)
+
+    if (name != "" && numberList <= people){
+        nameToList()
+    }
+})
+
 // input the names
 const namesInput = document.querySelector("#name")
 const nameList = document.querySelector(".name-list")
-
-const enter = document.querySelector(".enter")
 
 const generate = document.querySelector(".generate")
 
 var arrNames = []
 
 let numberList = 1
-let clickEnter = false;
 namesInput.addEventListener("keydown",function(el){
-    enter.addEventListener("click",function(){
-        out("hai")
-        clickEnter = true;
-        out(clickEnter)
-    })
+    let x = el.key
+    let name = namesInput.value
+    let people = parseInt(sumPeople.value)
 
-    if (name != "" && (x == "Enter" || clickEnter) && numberList <= people){
-        enterName()
-    }
-    
+    if (name != "" && x == "Enter" && numberList <= people){
+        nameToList();
+    }  
 })
 
-// function enter names
-function enterName(){
-    var x = el.key
-    var name = namesInput.value
-    var people = parseInt(sumPeople.value)
+// function input names
+function nameToList(){
+    let name = namesInput.value
+    let people = parseInt(sumPeople.value)
 
     // add names to array
     arrNames.push(name)
-        
+            
     if (numberList == people){
         generate.style.display = "inline"
     }
@@ -158,9 +163,10 @@ function enterName(){
         }
     })
 
-    numberList++
+    numberList++;
 
-    namesInput.value = ""
+    namesInput.value = "";
+    namesInput.focus();
 }
 
 // generate groups
