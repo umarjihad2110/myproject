@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=Inter&family=Nunito&family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;
+    gap: 50px;
+    background-color: #328eb9;
+}
+
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    .content{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(3,1fr);
+        border-radius: 3px;
+        overflow: hidden;
+        border: 2px solid #000;
+
+        .big-box{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(3,1fr);
+
+            .box{
+                width: 45px;
+                height: 45px;
+                font-size: 1.7rem;
+                text-align: center;
+                line-height: 45px;
+                border: 1px solid #000;
+                background-color: #ddd;
+            }
+        }
+    }
+
+    .tools{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .top{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .erase{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 5px 10px;
+                border-radius: 7px;
+                background-color: rgb(255,255,255,.4); 
+                cursor: pointer; 
+                transition: all .2s;
+
+                &:hover{
+                    background-color: rgb(255,255,255,.6);
+                }
+                
+                div{
+                    font-size: .8rem;
+                }
+            }
+
+            .new-game{
+                padding: 0 15px;
+                background-color: rgb(255,255,255,.4);
+                border-radius: 7px;
+                text-align: center;
+                cursor: pointer;
+                transition: all .2s;
+
+                &:hover{
+                    background-color: rgb(255,255,255,.6);
+                }
+            }
+        }
+
+        .numbers{
+            display: grid;
+            grid-template-columns: repeat(3,auto);
+            grid-template-rows: repeat(3,auto);
+            gap: 10px;
+
+            .number{
+                background-color: rgb(255,255,255,.4);
+                border-radius: 7px;
+                text-align: center;
+                transition: all .2s;
+                cursor: pointer;
+                font-size: 2.1rem;
+
+                &:hover{
+                    background-color: rgb(255,255,255,.6);
+                }
+            }
+        }
+    }
+}

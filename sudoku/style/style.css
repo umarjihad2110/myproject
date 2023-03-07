@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime&family=Inter&family=Nunito&family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0;
+  gap: 50px;
+  background-color: #328eb9;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.container .content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  border-radius: 3px;
+  overflow: hidden;
+  border: 2px solid #000;
+}
+.container .content .big-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+.container .content .big-box .box {
+  width: 45px;
+  height: 45px;
+  font-size: 1.7rem;
+  text-align: center;
+  line-height: 45px;
+  border: 1px solid #000;
+  background-color: #ddd;
+}
+.container .tools {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.container .tools .top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.container .tools .top .erase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 7px;
+  background-color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.container .tools .top .erase:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.container .tools .top .erase div {
+  font-size: 0.8rem;
+}
+.container .tools .top .new-game {
+  padding: 0 15px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 7px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.container .tools .top .new-game:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.container .tools .numbers {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(3, auto);
+  gap: 10px;
+}
+.container .tools .numbers .number {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 7px;
+  text-align: center;
+  transition: all 0.2s;
+  cursor: pointer;
+  font-size: 2.1rem;
+}
+.container .tools .numbers .number:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}/*# sourceMappingURL=style.css.map */
