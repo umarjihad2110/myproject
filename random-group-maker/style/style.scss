@@ -54,6 +54,7 @@ body{
             cursor: pointer;
             position: absolute;
             right: 0;
+            bottom: 0;
             transition: all .2s;
 
             &:hover{
@@ -136,5 +137,19 @@ body{
 @media screen and (max-width: 600px) {
     body{
         padding: 35px 10px;
+    }
+
+    .content{
+        width: 100%;
+
+        .people,.groups,.names{
+            flex-direction: column;
+            // background-color: red;
+            align-items: flex-start;
+            
+            input{
+                width: 100%;
+            }
+        }
     }
 }
