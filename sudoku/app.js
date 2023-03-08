@@ -24,10 +24,12 @@ window.addEventListener("load",function(){
 })
 
 // function put numbers into grid
+import { numbersTemplate } from "./numbers-template.js"
+
 function numberToGrid(){
 
-    // new shiffled array
-    let newArrNumbers = shuffle(arrNumbers);
+    let random = Math.floor(Math.random()*2)
+    out(numbersTemplate[random])
 
     // new array of boxes
     let newBoxes = []
@@ -41,74 +43,17 @@ function numberToGrid(){
         }
     }
 
-    // input the numbers to 1st row
+    // input the numbers to grid
+    for (let i = 0 ; i < newBoxes.length ; i++){
+        newBoxes[i].innerHTML = numbersTemplate[random][i] 
+    }
+}
+
+function checkRow(){
     for (let i = 0 ; i < 9 ; i++){
-        newBoxes[i].innerHTML = newArrNumbers[i]
-    }
 
-    // check number availablity
-    inputRandomNumber(newBoxes)
-}
-
-// function input random number
-function inputRandomNumber(arr){
-
-    let array = arr;
-    
-    for (let i = 9 ; i < array.length ; i++){
-        array[i].innerHTML = ''
-    }
-
-    for (let i = 9 ; i < 80 ; i += 9){
-        let newArrNumbers = shuffle(arrNumbers)
-        // out(newArrNumbers)
-
-        for (let j = 0 ; j < 9 ; j++){
-
-            
-            array[i+j].innerHTML = newArrNumbers[j]
-            
-            // check columns
-            out(array[i+j])
-            if (array[i+j].innerHTML == array[j].innerHTML){
-                return numberToGrid()
-            }
-        }
-        // break;
     }
 }
-
-// function check availablity number to join grid
-// function checkAble(arr){
-//     let array = arr;
-
-//     for (let i = 9 ; i < array.length ; i++){
-//         array[i].innerHTML = ''
-//     }
-
-//     for (let i = 9 ; i < 80 ; i += 9){
-//         let newArrNumbers = shuffle(arrNumbers)
-//         // out(newArrNumbers)
-
-//         let innerNumbers = []
-
-//         for (let j = 0 ; j < 9 ; j++){
-
-            
-//             array[i+j].innerHTML = newArrNumbers[j]
-            
-//             // check columns
-//             out(array[i+j])
-//             if (array[i+j].innerHTML == array[j].innerHTML){
-//                 // out("hai")
-//                 return checkAble()
-//             }
-//         }
-//         break;
-//     }
-    
-//     out(array[0].parentElement.children)
-// }
 
 // shuffle array
 function shuffle(array) {
