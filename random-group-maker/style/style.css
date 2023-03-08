@@ -56,6 +56,10 @@ body {
 .content .names .enter:hover {
   background-color: #ddd;
 }
+.content .auto-info {
+  font-size: 0.78rem;
+  align-self: flex-end;
+}
 
 .wrap {
   width: calc(100vw - 40px);
@@ -89,8 +93,12 @@ body {
   background-color: red;
   cursor: pointer;
 }
-.wrap .generate {
-  align-self: flex-start;
+.wrap .buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.wrap .buttons .generate, .wrap .buttons .clear {
   margin-top: 15px;
   padding: 5px 8px;
   border-radius: 5px;
@@ -101,7 +109,7 @@ body {
   font-size: 1rem;
   display: none;
 }
-.wrap .generate:hover {
+.wrap .buttons .generate:hover, .wrap .buttons .clear:hover {
   background-color: rgba(255, 255, 255, 0.9);
 }
 .wrap .result {
