@@ -1,14 +1,22 @@
 var out = console.log.bind(document)
 
 window.addEventListener("load",function(){
+
+    // input width
     document.querySelector(".names").style.width = `${document.querySelector(".content").clientWidth}px`
+
+    if (window.matchMedia("(min-width: 600px)").matches){
+        document.querySelector("#groups").style.width = `${document.querySelector(".groups").clientWidth - (document.querySelector(".groups label").clientWidth + 5)}px`
+    }
 
     // enter height and width
     document.querySelector(".enter").style.height = `${document.querySelector("#name").clientHeight}px`
     document.querySelector(".enter").style.width = `${document.querySelector("#name").clientHeight}px`
 
     // name input padding
-    this.document.querySelector("#name").style.paddingRight = `${document.querySelector(".enter").clientWidth + 5}px`
+    document.querySelector("#name").style.paddingRight = `${document.querySelector(".enter").clientWidth + 5}px`
+
+    out()
 })
 
 // set the focus input
@@ -39,20 +47,21 @@ const enter = document.querySelector(".enter")
 enter.addEventListener("click",function(){
     let name = namesInput.value
     let people = parseInt(sumPeople.value)
+    let groups = parseInt(sumGroups.value)
 
-    if (name != "" && x == "Enter" && isNaN(people) && isNaN(groups)){
+    if (name != "" && isNaN(people) && isNaN(groups)){
         alert("Please input number of people and group first")
     }
     
-    else if (name != "" && x == "Enter" && isNaN(people)){
+    else if (name != "" && isNaN(people)){
         alert("Please input number of people first")
     }
 
-    else if (name != "" && x == "Enter" && isNaN(groups)){
+    else if (name != "" && isNaN(groups)){
         alert("Please input number of group first")
     }
 
-    if (name != "" && numberList <= people){
+    else if (name != "" && numberList <= people){
         if (name == `n=${people}` && numberList == 1){
             autoList()
         }
