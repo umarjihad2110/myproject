@@ -27,12 +27,13 @@ body {
   grid-template-rows: repeat(3, 1fr);
   border-radius: 3px;
   overflow: hidden;
-  border: 2px solid #000;
+  border: 1px solid #000;
 }
 .container .content .big-box {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
+  border: 1px solid #000;
 }
 .container .content .big-box .box {
   width: 45px;
@@ -40,8 +41,15 @@ body {
   font-size: 1.7rem;
   text-align: center;
   line-height: 45px;
-  border: 1px solid #000;
+  border: 1px solid #bbb;
   background-color: #ddd;
+  cursor: default;
+}
+.container .content .big-box .click {
+  background-color: rgba(50, 142, 185, 0.5);
+}
+.container .content .big-box .side-click {
+  background-color: #999;
 }
 .container .tools {
   display: flex;

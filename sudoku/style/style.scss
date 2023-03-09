@@ -29,12 +29,13 @@ body{
         grid-template-rows: repeat(3,1fr);
         border-radius: 3px;
         overflow: hidden;
-        border: 2px solid #000;
+        border: 1px solid #000;
 
         .big-box{
             display: grid;
             grid-template-columns: repeat(3,1fr);
             grid-template-rows: repeat(3,1fr);
+            border: 1px solid #000;
 
             .box{
                 width: 45px;
@@ -42,8 +43,17 @@ body{
                 font-size: 1.7rem;
                 text-align: center;
                 line-height: 45px;
-                border: 1px solid #000;
+                border: 1px solid #bbb;
                 background-color: #ddd;
+                cursor: default;
+            }
+
+            .click{
+                background-color: rgb(50, 142, 185,.5);
+            }
+
+            .side-click{
+                background-color: #999;
             }
         }
     }
