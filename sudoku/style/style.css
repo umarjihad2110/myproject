@@ -26,7 +26,6 @@ body {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   border-radius: 3px;
-  overflow: hidden;
   border: 1px solid #000;
 }
 .container .content .big-box {
@@ -39,11 +38,12 @@ body {
   width: 45px;
   height: 45px;
   font-size: 1.7rem;
-  text-align: center;
-  line-height: 45px;
   border: 1px solid #888;
   background-color: #eee;
   cursor: default;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .container .content .big-box .click {
   background-color: #549abb;
@@ -113,4 +113,30 @@ body {
 }
 .container .tools .numbers .number:hover {
   background-color: rgba(255, 255, 255, 0.6);
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    padding: 25px;
+    gap: 25px;
+  }
+  .container {
+    flex-direction: column;
+  }
+  .container .content {
+    width: 95vw;
+    height: 95vw;
+  }
+  .container .content .big-box .box {
+    font-size: 1.5rem;
+    width: calc((95vw - 8px) / 9);
+    height: calc((95vw - 8px) / 9);
+  }
+  .container .tools {
+    align-items: center;
+  }
+  .container .tools .numbers {
+    display: flex;
+    align-items: center;
+  }
 }/*# sourceMappingURL=style.css.map */

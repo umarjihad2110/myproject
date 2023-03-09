@@ -28,7 +28,6 @@ body{
         grid-template-columns: repeat(3,1fr);
         grid-template-rows: repeat(3,1fr);
         border-radius: 3px;
-        overflow: hidden;
         border: 1px solid #000;
 
         .big-box{
@@ -41,11 +40,12 @@ body{
                 width: 45px;
                 height: 45px;
                 font-size: 1.7rem;
-                text-align: center;
-                line-height: 45px;
                 border: 1px solid #888;
                 background-color: #eee;
                 cursor: default;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
 
             .click{
@@ -130,6 +130,40 @@ body{
                 &:hover{
                     background-color: rgb(255,255,255,.6);
                 }
+            }
+        }
+    }
+}
+
+// responsive code
+@media screen and (max-width: 600px) {
+    body{
+        padding: 25px;
+        gap: 25px;
+    }
+    .container{
+        flex-direction: column;
+
+        .content{
+            width: 95vw ;
+            height: 95vw;
+
+            .big-box{
+
+                .box{
+                    font-size: 1.5rem;
+                    width: calc((95vw - 8px)/9);
+                    height: calc((95vw - 8px)/9);
+                }
+            }
+        }
+
+        .tools{
+            align-items: center;
+
+            .numbers{
+                display: flex;
+                align-items: center;
             }
         }
     }
