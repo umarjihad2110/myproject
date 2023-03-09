@@ -1,4 +1,4 @@
-export const numbersTemplate = [
+export var numbersTemplate = [
     [
         3,5,8,9,4,1,2,7,6,
         7,9,6,2,5,8,4,3,1,

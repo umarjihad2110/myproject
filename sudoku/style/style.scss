@@ -43,17 +43,29 @@ body{
                 font-size: 1.7rem;
                 text-align: center;
                 line-height: 45px;
-                border: 1px solid #bbb;
-                background-color: #ddd;
+                border: 1px solid #888;
+                background-color: #eee;
                 cursor: default;
             }
 
             .click{
-                background-color: rgb(50, 142, 185,.5);
+                background-color: #549abb;
             }
 
             .side-click{
-                background-color: #999;
+                background-color: #bbb;
+            }
+
+            .color-blue{
+                color: blue;
+            }
+
+            .color-red{
+                color: red;
+            }
+
+            .bg-red{
+                background-color: rgb(255,0,0,.7);
             }
         }
     }
