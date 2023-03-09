@@ -25,6 +25,12 @@ window.addEventListener("load",function(){
 
     // hide numbers
     hideNumbers()
+
+    // highlight the first number
+    let element = newBoxes[0]
+    let row = 1
+    let column = 1
+    addClassRowColumn(element,row,column)
 })
 
 // function put numbers into grid
@@ -78,35 +84,76 @@ function hideNumbers(){
 // click grid
 box.forEach(function(box){
     box.addEventListener("click",function(){
-
-        // remove all the class
-        for (let i = 0 ; i < newBoxes.length ; i++){
-            newBoxes[i].classList.remove("click","side-click")
-        }
-
-        // add side class
-        for (let i = 0 ; i < box.parentElement.children.length ; i++){
-            box.parentElement.children[i].classList.add("side-click")
-        }
-
-        // get the row and column fro class
+        
+        // get the row and column for class
         let row = box.classList.item(1)[0]
         let column = box.classList.item(1)[2]
 
         addClassRowColumn(box,row,column)
         
-        // add click class 
-        box.classList.remove("side-click")
-        box.classList.add("click")
     })
+})
+
+// function arrow
+document.addEventListener("keydown",function(el){
+    let key = el.key
+
+    let element
+    let row
+    let column
+
+    for (let i = 0 ; i < newBoxes.length ; i++){
+        if (newBoxes[i].classList.contains("click")){
+            element = newBoxes[i]
+            row = parseInt(element.classList.item(1)[0])
+            column = parseInt(element.classList.item(1)[2]);
+        }
+    }
+
+    if (key == "ArrowUp" && row > 1){
+        row--;
+    }
+
+    else if (key == "ArrowDown" && row < 9){
+        row++;
+    }
+    
+    else if (key == "ArrowLeft" && column > 1){
+        column--;
+    }
+    
+    else if (key == "ArrowRight" && column < 9){
+        column++;
+    }
+    
+    for (let j = 0 ; j < newBoxes.length ; j++){
+        if (newBoxes[j].classList.item(1)[0] == row && newBoxes[j].classList.item(1)[2] == column){
+            element = newBoxes[j]
+        }
+    }
+
+    if (element != undefined && row != undefined && column != undefined){
+        addClassRowColumn(element,row,column)
+    }
 })
 
 // add side-click class to row and column
 function addClassRowColumn(element,row,column){
+
+    // remove all the class
+    for (let i = 0 ; i < newBoxes.length ; i++){
+        newBoxes[i].classList.remove("click","side-click")
+    }
+
+    // add side class
+    for (let i = 0 ; i < element.parentElement.children.length ; i++){
+        element.parentElement.children[i].classList.add("side-click")
+    }
+
     for (let i = 1 ; i <= 9 ; i++){
         for (let j = 1 ; j <= 9 ; j++){
             for (let k = 0 ; k < newBoxes.length ; k++){
-
+                
                 // check row, column, and same number
                 let number = element.innerHTML 
 
@@ -114,13 +161,13 @@ function addClassRowColumn(element,row,column){
                     newBoxes[k].classList.add("side-click")
                     element.classList.remove("side-click")
                 }
-
-                else {
-                    newBoxes[k].classList.remove("side-click")
-                }
             }
         }
     }
+    
+    // add click class 
+    element.classList.remove("side-click")
+    element.classList.add("click")
 }
 
 // function check row, column, and same number
