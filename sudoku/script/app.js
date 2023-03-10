@@ -186,7 +186,7 @@ function checkRowColum(element,number,row,column,value=true){
         if (siblings[i].innerHTML == number && siblings[i] != element){
             siblings[i].classList.add("bg-red")
         }
-        else if (siblings[i].innerHTML != number){
+        else if (siblings[i].innerHTML != number && !siblings[i].classList.contains("bg-red")){
             siblings[i].classList.remove("bg-red")
         }
     }
@@ -200,7 +200,7 @@ function checkRowColum(element,number,row,column,value=true){
                     newBoxes[k].classList.add("bg-red")
                 }
 
-                else if ((newBoxes[k].classList.item(1) == `${row}-${i}` || newBoxes[k].classList.item(1) == `${j}-${column}`) && newBoxes[k].innerHTML != number) {
+                else if ((newBoxes[k].classList.item(1) == `${row}-${i}` || newBoxes[k].classList.item(1) == `${j}-${column}`) && newBoxes[k].innerHTML != number && !newBoxes[k].classList.contains("bg-red")) {
                     newBoxes[k].classList.remove("bg-red")
                 }
             }
@@ -343,7 +343,10 @@ function checkFinish(){
             box.style.filter = "blur(4px)"
         })
         
-        finish.style.opacity = "1"
+        finish.style.display = "flex"
+        setTimeout(() => {
+            finish.style.opacity = "1"
+        }, 500);
 
         hourFinish.innerHTML = innerHour;
         minFinish.innerHTML = innerMin;
