@@ -183,7 +183,11 @@ function checkRowColum(element,number,row,column,value=true){
     // check siblings
     let siblings = element.parentElement.children
     for (let i = 0 ; i < siblings.length ; i++){
-        if (siblings[i].innerHTML == number && siblings[i] != element){
+        // if (!value && siblings[i].innerHTML == number && siblings[i]){
+
+        // }
+        if (siblings[i].innerHTML == number && siblings[i] != element && value){
+            out("hai")
             siblings[i].classList.add("bg-red")
         }
         else if (siblings[i].innerHTML != number && !siblings[i].classList.contains("bg-red")){
@@ -196,7 +200,8 @@ function checkRowColum(element,number,row,column,value=true){
             for (let k = 0 ; k < newBoxes.length ; k++){
 
                 // check row, column, and same number
-                if ((newBoxes[k].classList.item(1) == `${row}-${i}` || newBoxes[k].classList.item(1) == `${j}-${column}`) && newBoxes[k].innerHTML == number && number != "" && newBoxes[k] != element){
+                if ((newBoxes[k].classList.item(1) == `${row}-${i}` || newBoxes[k].classList.item(1) == `${j}-${column}`) && newBoxes[k].innerHTML == number && newBoxes[k] != element && value){
+                    out("hai")
                     newBoxes[k].classList.add("bg-red")
                 }
 
@@ -207,11 +212,47 @@ function checkRowColum(element,number,row,column,value=true){
         }
     }
 
+    let red;
+    let redRow;
+    let redColumn;
     for (let i = 0 ; i < newBoxes.length ; i++){
-        if (newBoxes[i].innerHTML == number && !value){
+        if (newBoxes[i].innerHTML == number && !value && newBoxes[i].classList.contains("color-red")){
+            red = newBoxes[i]
+            redRow = newBoxes[i].classList.item(1)[0]
+            redColumn = newBoxes[i].classList.item(1)[2]
+            out(red)
+        }
+    }
+
+    for (let i = 0 ; i < newBoxes.length ; i++){
+        if (newBoxes[i].innerHTML == number && !value && newBoxes[i] != element && red == undefined){
+            newBoxes[i].classList.remove("bg-red")
+            out("hai")
+        }
+        else if (newBoxes[i].innerHTML == number && !value && newBoxes[i].innerHTML != red.innerHTML){
+            out("hai")
             newBoxes[i].classList.remove("bg-red")
         }
     }
+
+    for (let i = 0 ; i < 9 ; i++){
+        for (let j = 0 ; j < 9 ; j++){
+            for (let k = 0 ; k < newBoxes.length ; k++){
+                if ((newBoxes[k].classList.item(1) == `${row}-${i}` || newBoxes[k].classList.item(1) == `${j}-${column}`) && newBoxes[k].innerHTML == number && newBoxes[k] != element && !value){
+
+                    let newBoxesRow = newBoxes[k].classList.item(1)[0]
+                    let newBoxesColumn = newBoxes[k].classList.item(1)[2]
+
+                    if (newBoxesRow != redRow && newBoxesColumn != redColumn){
+                        newBoxes[k].classList.remove("bg-red")
+                        out("hai")
+                    }
+                }
+            }
+        }
+    }
+
+    element.classList.remove("bg-red")
 }
 
 // enter number
@@ -303,11 +344,12 @@ erase.addEventListener("click",function(){
     for (let i = 0 ; i < newBoxes.length ; i++){
         if (newBoxes[i].classList.contains("click") && randomNumbers.includes(i) && !done){
             let element = newBoxes[i]
+            let number = element.innerHTML
             let row = element.classList.item(1)[0]
             let column = element.classList.item(1)[2]
             
             eraseNumbers(element)
-            checkRowColum(element,"",row,column,false)
+            checkRowColum(element,number,row,column,false)
             addClassRowColumn(element,row,column)
         }
     }
