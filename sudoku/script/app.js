@@ -61,7 +61,6 @@ function numberToGrid(){
     }
 
     newNumbersTemplate = newNumbersTemplate[random]
-    out(newNumbersTemplate)
 
     // input the numbers to grid
     for (let i = 0 ; i < newBoxes.length ; i++){
