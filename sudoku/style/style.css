@@ -39,7 +39,8 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  display: none;
+  opacity: 0;
+  transition: all 1s;
 }
 .container .content .finish .gg {
   font-family: "Pacifico", cursive;
@@ -47,12 +48,15 @@ body {
 }
 .container .content .finish .time {
   font-size: 1.8rem;
+  display: flex;
+  align-items: center;
 }
 .container .content .big-box {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   border: 1px solid #000;
+  transition: all 1s;
 }
 .container .content .big-box .box {
   width: 45px;
@@ -65,9 +69,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-.container .content .big-box .click {
-  background-color: #549abb;
-}
 .container .content .big-box .side-click {
   background-color: #bbb;
 }
@@ -79,6 +80,9 @@ body {
 }
 .container .content .big-box .bg-red {
   background-color: rgba(255, 0, 0, 0.7);
+}
+.container .content .big-box .click {
+  background-color: #549abb;
 }
 .container .tools {
   display: flex;

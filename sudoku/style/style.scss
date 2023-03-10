@@ -41,7 +41,8 @@ body{
             left: 50%;
             top: 50%;
             transform: translate(-50%,-50%);
-            display: none;
+            opacity: 0;
+            transition: all 1s;
 
             .gg{
                 font-family: 'Pacifico', cursive;
@@ -50,6 +51,8 @@ body{
 
             .time{
                 font-size: 1.8rem;
+                display: flex;
+                align-items: center;
             }
         }
 
@@ -58,6 +61,7 @@ body{
             grid-template-columns: repeat(3,1fr);
             grid-template-rows: repeat(3,1fr);
             border: 1px solid #000;
+            transition: all 1s;
 
             .box{
                 width: 45px;
@@ -69,10 +73,6 @@ body{
                 display: flex;
                 justify-content: center;
                 align-items: center;
-            }
-
-            .click{
-                background-color: #549abb;
             }
 
             .side-click{
@@ -89,6 +89,10 @@ body{
 
             .bg-red{
                 background-color: rgb(255,0,0,.7);
+            }
+
+            .click{
+                background-color: #549abb;
             }
         }
     }

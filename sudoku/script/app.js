@@ -40,7 +40,7 @@ let newNumbersTemplate = numbersTemplate
 let newBoxes = []
 function numberToGrid(){
 
-    let random = Math.floor(Math.random()*2)
+    let random = Math.floor(Math.random()*(newNumbersTemplate.length))
 
     // new array of boxes
     for (let j = 1 ; j <= 9 ; j++){
@@ -155,9 +155,9 @@ function addClassRowColumn(element,row,column){
             for (let k = 0 ; k < newBoxes.length ; k++){
                 
                 // check row, column, and same number
-                let number = element.innerHTML 
+                let number = element.innerHTML
 
-                if (newBoxes[k].classList.item(1) == `${row}-${i}` || newBoxes[k].classList.item(1) == `${j}-${column}` || (newBoxes[k].innerHTML == number && number != "")){
+                if ((newBoxes[k].classList.item(1) == `${row}-${i}` || newBoxes[k].classList.item(1) == `${j}-${column}`) || (newBoxes[k].innerHTML == number && number != "")){
                     newBoxes[k].classList.add("side-click")
                     element.classList.remove("side-click")
                 }
@@ -173,13 +173,13 @@ function addClassRowColumn(element,row,column){
 // function check row, column, and same number
 function checkRowColum(element,number,row,column,value=true){
 
+    // check siblings
     let siblings = element.parentElement.children
     for (let i = 0 ; i < siblings.length ; i++){
-        if (siblings[i].innerHTML == number && number != "" && siblings[i] != element){
+        if (siblings[i].innerHTML == number && siblings[i] != element){
             siblings[i].classList.add("bg-red")
         }
-
-        if (!value && siblings[i].classList.contains("bg-red")){
+        else if (siblings[i].innerHTML != number){
             siblings[i].classList.remove("bg-red")
         }
     }
@@ -191,27 +191,33 @@ function checkRowColum(element,number,row,column,value=true){
                 // check row, column, and same number
                 if ((newBoxes[k].classList.item(1) == `${row}-${i}` || newBoxes[k].classList.item(1) == `${j}-${column}`) && newBoxes[k].innerHTML == number && number != "" && newBoxes[k] != element){
                     newBoxes[k].classList.add("bg-red")
-                
                 }
 
-                else if ((newBoxes[k].classList.item(1) == `${row}-${i}` || newBoxes[k].classList.item(1) == `${j}-${column}`) && newBoxes[k].classList.contains("bg-red") && newBoxes[k].innerHTML != number && number != ""){
-                    newBoxes[k].classList.remove("bg-red")
-                
-                }
-
-                else if ((newBoxes[k].classList.item(1) == `${row}-${i}` || newBoxes[k].classList.item(1) == `${j}-${column}`) && newBoxes[k].classList.contains("bg-red") && number == ""){
+                else if ((newBoxes[k].classList.item(1) == `${row}-${i}` || newBoxes[k].classList.item(1) == `${j}-${column}`) && newBoxes[k].innerHTML != number) {
                     newBoxes[k].classList.remove("bg-red")
                 }
             }
         }
     }
+
+    for (let i = 0 ; i < newBoxes.length ; i++){
+        if (newBoxes[i].innerHTML == number && !value){
+            newBoxes[i].classList.remove("bg-red")
+        }
+    }
 }
 
 // enter number
+let firstClick = 0
 document.addEventListener("keyup",function(el){
     let key = parseInt(el.key)
     if (arrNumbers.includes(key)){
         enterNumber(key)
+
+        firstClick++
+        if (firstClick == 1){
+            timer()
+        }
     }
 })
 
@@ -219,6 +225,11 @@ numbers.forEach(function(number){
     number.addEventListener("click",function(){
         let key = parseInt(number.innerHTML)
         enterNumber(key)
+        
+        firstClick++
+        if (firstClick == 1){
+            timer()
+        }
     })
 })
 
@@ -249,6 +260,8 @@ function enterNumber(number){
                 newBoxes[index].classList.remove("color-red","bg-red")
                 
                 checkRowColum(element,number,row,column,false)
+
+                checkFinish()
             }
 
             addClassRowColumn(element,row,column)
@@ -264,11 +277,12 @@ document.addEventListener("keyup",function(el){
         for (let i = 0 ; i < newBoxes.length ; i++){
             if (newBoxes[i].classList.contains("click") && randomNumbers.includes(i)){
                 let element = newBoxes[i]
+                let number = element.innerHTML
                 let row = element.classList.item(1)[0]
                 let column = element.classList.item(1)[2]
 
                 eraseNumbers(element)
-                checkRowColum(element,"",row,column,false)
+                checkRowColum(element,number,row,column,false)
                 addClassRowColumn(element,row,column)
             }
         }
@@ -301,51 +315,85 @@ function shuffle(array) {
     return array
 }
 
-// timer
-var timerSec = null;
-function sec(){
-    let sec = 0;
-    timerSec = setInterval(() => {
-        sec++;
-        if (sec == 60){
-            sec = 0
+// check finish
+const finish = document.querySelector(".finish")
+function checkFinish(){
+
+    let win = 0
+    for (let i = 0 ; i < newBoxes.length ; i++){
+        if (newBoxes[i].innerHTML == ""){
+            win++
         }
+    }
+    out(win)
+
+    if (win == 0){
+        bigBox.forEach(function(box){
+            box.style.filter = "blur(4px)"
+        })
+        finish.style.opacity = "1"
+    }
+}
+
+// timer
+const second = document.querySelector(".sec")
+const minute = document.querySelector(".min")
+const hours = document.querySelector(".hour")
+
+const secFinish = document.querySelector(".sec-finish")
+const minFinish = document.querySelector(".min-finish")
+const hourFinish = document.querySelector(".hour-finish")
+
+let myTimer;
+let innerSec,innerMin,innerHour;
+
+function timer(){
+    let sec = 2;
+    let min = 0;
+    let hour = 0;
+
+    second.innerHTML = `01`
+
+    myTimer = setInterval(() => {
+
+        if (min == 60){
+            min = 0;
+            hour++;
+        }
+
+        if (sec == 60){
+            sec = 0;
+            min++;
+        }
+        
+        // seconds
         if (sec < 10){
             second.innerHTML = `0${sec}`
         }
         else {
             second.innerHTML = `${sec}`
         }
-    }, 1000);
-}
 
-var timerMin = null
-function min(){
-    let min = 0
-    timerMin = setInterval(() => {
-        min++;
-        if (min == 60){
-            min = 0
-        }
+        // minutes
         if (min < 10){
-            minute.innerHTML = `0${min}`
+            minute.innerHTML = `0${min}:`
         }
         else {
-            minute.innerHTML =`${min}`
+            minute.innerHTML = `${min}:`
         }
-    }, 60000);
-}
 
-var timerHour = null
-function hours(){
-    let hr = 0;
-    timerHour = setInterval(() => {
-        hr++;
-        if (hr < 10){
-            hour.innerHTML = `0${hr}`
+        // hours
+        if (hour < 10){
+            hours.innerHTML = `0${hour}:`
         }
         else {
-            hour.innerHTML = `${hr}`
+            hours.innerHTML = `${hour}:`
         }
-    }, 3600000);
+
+        innerSec = sec;
+        innerMin = min;
+        innerHour = hour;
+
+        sec++
+    }, 1000);
 }
