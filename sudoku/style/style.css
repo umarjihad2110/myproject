@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Courier+Prime&family=Inter&family=Nunito&family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime&family=Inter&family=Nunito&family=Pacifico&family=Poppins&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -27,6 +27,26 @@ body {
   grid-template-rows: repeat(3, 1fr);
   border-radius: 3px;
   border: 1px solid #000;
+  position: relative;
+}
+.container .content .finish {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 99;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+.container .content .finish .gg {
+  font-family: "Pacifico", cursive;
+  font-size: 50px;
+}
+.container .content .finish .time {
+  font-size: 1.8rem;
 }
 .container .content .big-box {
   display: grid;
@@ -64,6 +84,12 @@ body {
   display: flex;
   flex-direction: column;
   gap: 15px;
+}
+.container .tools .timer {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  font-size: 1.2rem;
 }
 .container .tools .top {
   display: flex;
