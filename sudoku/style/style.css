@@ -95,6 +95,10 @@ body {
   align-self: center;
   font-size: 1.2rem;
 }
+.container .tools .timer .sec, .container .tools .timer .min, .container .tools .timer .hour {
+  font-size: 1.25rem;
+  font-family: "Courier Prime", monospace;
+}
 .container .tools .top {
   display: flex;
   align-items: center;
@@ -136,10 +140,12 @@ body {
 .container .tools .numbers .number {
   background-color: rgba(255, 255, 255, 0.4);
   border-radius: 7px;
-  text-align: center;
   transition: all 0.2s;
   cursor: pointer;
   font-size: 2.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .container .tools .numbers .number:hover {
   background-color: rgba(255, 255, 255, 0.6);
@@ -166,7 +172,16 @@ body {
     align-items: center;
   }
   .container .tools .numbers {
+    width: 95vw;
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
+  }
+  .container .tools .numbers .number {
+    background: none;
+    padding: 0 5px;
+  }
+  .container .tools .numbers .number:hover {
+    background-color: rgba(255, 255, 255, 0.4);
   }
 }/*# sourceMappingURL=style.css.map */

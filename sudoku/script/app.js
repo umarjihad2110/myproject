@@ -10,15 +10,22 @@ let arrNumbers = [1,2,3,4,5,6,7,8,9]
 
 // load window
 window.addEventListener("load",function(){
+
+    // set display
     document.querySelector(".new-game").style.height = `${document.querySelector(".erase").clientHeight}px`
 
     let height = `${document.querySelector(".new-game").clientHeight}px`
     document.querySelector(".new-game").style.lineHeight = height
 
-    numbers.forEach(function(number){
-        number.style.height = `${number.clientWidth}px`
-        number.style.lineHeight = `${number.clientWidth}px`
-    })
+    if (window.matchMedia("(min-width: 600px)").matches){
+        numbers.forEach(function(number){
+            number.style.height = `${number.clientWidth}px`
+        })
+    }
+
+    if (window.matchMedia("(max-width: 600px)").matches){
+        document.querySelector(".top").insertBefore(document.querySelector(".timer"),erase)
+    }
 
     // put number into grid
     numberToGrid()
@@ -89,8 +96,9 @@ box.forEach(function(box){
         let row = box.classList.item(1)[0]
         let column = box.classList.item(1)[2]
 
-        addClassRowColumn(box,row,column)
-        
+        if (!done){
+            addClassRowColumn(box,row,column)
+        }
     })
 })
 
@@ -132,7 +140,7 @@ document.addEventListener("keydown",function(el){
         }
     }
 
-    if (element != undefined && row != undefined && column != undefined){
+    if (element != undefined && row != undefined && column != undefined && !done){
         addClassRowColumn(element,row,column)
     }
 })
@@ -211,7 +219,7 @@ function checkRowColum(element,number,row,column,value=true){
 let firstClick = 0
 document.addEventListener("keyup",function(el){
     let key = parseInt(el.key)
-    if (arrNumbers.includes(key)){
+    if (arrNumbers.includes(key) && !done){
         enterNumber(key)
 
         firstClick++
@@ -223,12 +231,15 @@ document.addEventListener("keyup",function(el){
 
 numbers.forEach(function(number){
     number.addEventListener("click",function(){
-        let key = parseInt(number.innerHTML)
-        enterNumber(key)
         
-        firstClick++
-        if (firstClick == 1){
-            timer()
+        if (!done){
+            let key = parseInt(number.innerHTML)
+            enterNumber(key)
+            
+            firstClick++
+            if (firstClick == 1){
+                timer()
+            }
         }
     })
 })
@@ -272,7 +283,7 @@ function enterNumber(number){
 // erase number
 document.addEventListener("keyup",function(el){
     let click = el.key;
-    if (click == "Backspace"){
+    if (click == "Backspace" && !done){
         //
         for (let i = 0 ; i < newBoxes.length ; i++){
             if (newBoxes[i].classList.contains("click") && randomNumbers.includes(i)){
@@ -291,7 +302,7 @@ document.addEventListener("keyup",function(el){
 
 erase.addEventListener("click",function(){
     for (let i = 0 ; i < newBoxes.length ; i++){
-        if (newBoxes[i].classList.contains("click") && randomNumbers.includes(i)){
+        if (newBoxes[i].classList.contains("click") && randomNumbers.includes(i) && !done){
             let element = newBoxes[i]
             let row = element.classList.item(1)[0]
             let column = element.classList.item(1)[2]
@@ -317,6 +328,7 @@ function shuffle(array) {
 
 // check finish
 const finish = document.querySelector(".finish")
+let done = false;
 function checkFinish(){
 
     let win = 0
@@ -325,13 +337,20 @@ function checkFinish(){
             win++
         }
     }
-    out(win)
 
     if (win == 0){
+        clearInterval(myTimer)
         bigBox.forEach(function(box){
             box.style.filter = "blur(4px)"
         })
+        
         finish.style.opacity = "1"
+
+        hourFinish.innerHTML = innerHour;
+        minFinish.innerHTML = innerMin;
+        secFinish.innerHTML = innerSec;
+        
+        done = true
     }
 }
 
@@ -390,9 +409,9 @@ function timer(){
             hours.innerHTML = `${hour}:`
         }
 
-        innerSec = sec;
-        innerMin = min;
-        innerHour = hour;
+        innerSec = second.innerHTML;
+        innerMin = minute.innerHTML;
+        innerHour = hours.innerHTML;
 
         sec++
     }, 1000);

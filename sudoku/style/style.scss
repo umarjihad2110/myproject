@@ -107,6 +107,11 @@ body{
             align-items: center;
             align-self: center;
             font-size: 1.2rem;
+            
+            .sec,.min,.hour{
+                font-size: 1.25rem;
+                font-family: 'Courier Prime', monospace;
+            }
         }
 
         .top{
@@ -156,10 +161,12 @@ body{
             .number{
                 background-color: rgb(255,255,255,.4);
                 border-radius: 7px;
-                text-align: center;
                 transition: all .2s;
                 cursor: pointer;
                 font-size: 2.1rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
 
                 &:hover{
                     background-color: rgb(255,255,255,.6);
@@ -196,8 +203,19 @@ body{
             align-items: center;
 
             .numbers{
+                width: 95vw;
                 display: flex;
                 align-items: center;
+                justify-content: space-evenly;
+
+                .number{
+                    background: none;
+                    padding: 0 5px;
+
+                    &:hover{                
+                        background-color: rgb(255,255,255,.4);
+                    }
+                }
             }
         }
     }
