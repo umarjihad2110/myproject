@@ -213,7 +213,7 @@ function checkRowColum(element,number,row,column,value=true){
     }
 
     for (let i = 0 ; i < newBoxes.length ; i++){
-        if (newBoxes[i].classList.contains("color-red") && !value){
+        if (newBoxes[i].classList.contains("color-red")){
             let element = newBoxes[i]
             let number
             let row = element.classList.item(1)[0]
@@ -239,6 +239,9 @@ function checkColorRed(element,number,row,column){
         if (siblings[i].innerHTML == number && siblings[i] != element){
             siblings[i].classList.add("bg-red")
         }
+        else if (siblings[i].innerHTML != number){
+            siblings[i].classList.remove("bg-red")
+        }
     }
 
     // check row and column
@@ -247,6 +250,10 @@ function checkColorRed(element,number,row,column){
             for (let k = 0 ; k < newBoxes.length ; k++){
                 if ((newBoxes[k].classList.item(1) == `${row}-${i}` || newBoxes[k].classList.item(1) == `${j}-${column}`) && newBoxes[k].innerHTML == number && newBoxes[k] != element){
                     newBoxes[k].classList.add("bg-red")
+                }
+
+                else if ((newBoxes[k].classList.item(1) == `${row}-${i}` || newBoxes[k].classList.item(1) == `${j}-${column}`) && newBoxes[k].innerHTML != number){
+                    newBoxes[k].classList.remove("bg-red")
                 }
             }
         }
