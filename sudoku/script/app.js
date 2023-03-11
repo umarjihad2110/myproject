@@ -41,7 +41,7 @@ window.addEventListener("load",function(){
 })
 
 // function put numbers into grid
-import { numbersTemplate } from "./numbers-template.js"
+import { numbersTemplate } from "./sg.js"
 let newNumbersTemplate = numbersTemplate
 
 let newBoxes = []
@@ -60,7 +60,7 @@ function numberToGrid(){
         }
     }
 
-    newNumbersTemplate = newNumbersTemplate[random]
+    // newNumbersTemplate = newNumbersTemplate[random]
 
     // input the numbers to grid
     for (let i = 0 ; i < newBoxes.length ; i++){

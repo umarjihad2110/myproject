@@ -1,6 +1,8 @@
 // Define the size of the Sudoku grid (9x9 in this case)
 const size = 9;
 
+export let numbersTemplate
+
 // Create an empty grid
 let grid = [];
 
@@ -25,6 +27,7 @@ function isValid(grid, row, col, value) {
     // Check if the value already exists in the same 3x3 block
     const blockRow = Math.floor(row / 3) * 3;
     const blockCol = Math.floor(col / 3) * 3;
+
     for (let i = 0; i < 3; i++) {
         for (let j = 0; j < 3; j++) {
             if (grid[blockRow + i][blockCol + j] === value) {
@@ -82,4 +85,5 @@ function shuffle(array) {
 solve(grid);
 
 // Print the puzzle to the console
-console.log(grid);
+// console.log(grid.flat())
+numbersTemplate = grid.flat()
