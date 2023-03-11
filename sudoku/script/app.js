@@ -41,13 +41,10 @@ window.addEventListener("load",function(){
 })
 
 // function put numbers into grid
-import { numbersTemplate } from "./sg.js"
-let newNumbersTemplate = numbersTemplate
+import { sudokuGrid } from "./sudoku-grid-generator.js"
 
 let newBoxes = []
 function numberToGrid(){
-
-    let random = Math.floor(Math.random()*(newNumbersTemplate.length))
 
     // new array of boxes
     for (let j = 1 ; j <= 9 ; j++){
@@ -60,11 +57,9 @@ function numberToGrid(){
         }
     }
 
-    // newNumbersTemplate = newNumbersTemplate[random]
-
     // input the numbers to grid
     for (let i = 0 ; i < newBoxes.length ; i++){
-        newBoxes[i].innerHTML = newNumbersTemplate[i] 
+        newBoxes[i].innerHTML = sudokuGrid[i] 
     }
 }
 

@@ -1,7 +1,7 @@
 // Define the size of the Sudoku grid (9x9 in this case)
 const size = 9;
 
-export let numbersTemplate
+export let sudokuGrid
 
 // Create an empty grid
 let grid = [];
@@ -86,4 +86,4 @@ solve(grid);
 
 // Print the puzzle to the console
 // console.log(grid.flat())
-numbersTemplate = grid.flat()
+sudokuGrid = grid.flat()
