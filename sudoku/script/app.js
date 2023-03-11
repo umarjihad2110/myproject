@@ -212,6 +212,7 @@ function checkRowColum(element,number,row,column,value=true){
         }
     }
 
+    let nothingRed = 0
     for (let i = 0 ; i < newBoxes.length ; i++){
         if (newBoxes[i].classList.contains("color-red")){
             let element = newBoxes[i]
@@ -222,13 +223,27 @@ function checkRowColum(element,number,row,column,value=true){
                 number = element.innerHTML
                 checkColorRed(element,number,row,column)
             }
-
         }
+        else {
+            nothingRed++
+        }
+    }
+
+    if (nothingRed == newBoxes.length){
+        checkColorRed(newBoxes[0],1,1,1,true)
     }
 }
 
 // function check color-red
-function checkColorRed(element,number,row,column){
+function checkColorRed(element,number,row,column,nothingRed=false){
+    
+    if (nothingRed){
+        for (let i = 0 ; i < newBoxes.length ; i++){
+            newBoxes[i].classList.remove("bg-red")
+        }
+
+        return false
+    }
     
     let siblings = element.parentElement.children
     
@@ -239,7 +254,7 @@ function checkColorRed(element,number,row,column){
         if (siblings[i].innerHTML == number && siblings[i] != element){
             siblings[i].classList.add("bg-red")
         }
-        else if (siblings[i].innerHTML != number){
+        else if (siblings[i].innerHTML != number && !nothingRed){
             siblings[i].classList.remove("bg-red")
         }
     }
@@ -248,11 +263,11 @@ function checkColorRed(element,number,row,column){
     for (let i = 1 ; i <= 9 ; i++){
         for (let j = 1 ; j <= 9 ; j++){
             for (let k = 0 ; k < newBoxes.length ; k++){
-                if ((newBoxes[k].classList.item(1) == `${row}-${i}` || newBoxes[k].classList.item(1) == `${j}-${column}`) && newBoxes[k].innerHTML == number && newBoxes[k] != element){
+                if ((newBoxes[k].classList.item(1) == `${row}-${i}` || newBoxes[k].classList.item(1) == `${j}-${column}`) && newBoxes[k].innerHTML == number && newBoxes[k] != element && !nothingRed){
                     newBoxes[k].classList.add("bg-red")
                 }
 
-                else if ((newBoxes[k].classList.item(1) == `${row}-${i}` || newBoxes[k].classList.item(1) == `${j}-${column}`) && newBoxes[k].innerHTML != number){
+                else if ((newBoxes[k].classList.item(1) == `${row}-${i}` || newBoxes[k].classList.item(1) == `${j}-${column}`) && newBoxes[k].innerHTML != number && !nothingRed){
                     newBoxes[k].classList.remove("bg-red")
                 }
             }
