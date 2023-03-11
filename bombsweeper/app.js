@@ -264,68 +264,69 @@ function checkBomb(x){
     }
 }
 
+// timer
+const second = document.querySelector(".sec")
+const minute = document.querySelector(".min")
+
+let innerSec;
+let innerMin;
+
 let myTimer;
 function timer(){
-    let sec = 2;
+    let sec = 1;
     let min = 0;
 
     document.querySelector('.sec').innerHTML = `01`
 
     myTimer = setInterval(() => {
+        sec++
+        
         if (sec == 60){
             sec = 0;
             min++;
         }
+
         if (sec < 10){
-            document.querySelector(".sec").innerHTML = `0${sec}`
+            second.innerHTML = `0${sec}`
         }
+
         else {
-            document.querySelector(".sec").innerHTML = `${sec}`
+            second.innerHTML = `${sec}`
         }
 
         if (min < 10){
-            document.querySelector(".min").innerHTML = `0${min}:`
+            minute.innerHTML = `0${min}:`
         }
+
         else {
-            document.querySelector(".min").innerHTML = `${min}:`
+            minute.innerHTML = `${min}:`
         }
-        sec++
+
+        innerSec = second.innerHTML
+        innerMin = minute.innerHTML
     }, 1000);
 }
-let currentScore
-let hiScore
+
+// show score
 function winOrLose(thing){
     setTimeout(() => {
         gameOver = true
+
         clearInterval(myTimer)
+        
         document.querySelector(".score").style.display = "flex"
 
         if (thing == "win"){
-            document.querySelector(".score-value").innerHTML = document.querySelector(".min").innerHTML + document.querySelector(".sec").innerHTML
+            document.querySelector(".score-value").innerHTML = "You won"
 
-            currentScore = (parseInt(document.querySelector(".min").innerHTML))*60 + parseInt(document.querySelector(".sec").innerHTML)
-            
-            if (!localStorage.getItem("hiScore")){
-                localStorage.setItem("hiScore",currentScore)
-            }
-            else{
-                if (currentScore < localStorage.getItem("hiScore")){
-                    localStorage.setItem("hiScore",currentScore)
-                }
-            }
-            hiScore = parseInt(localStorage.getItem("hiScore"))
-
-            document.querySelector(".hi-score").style.display = "block";
-            if (hiScore > 60){
-                document.querySelector(".hi-score").innerHTML = `0${hiScore % 60}:${hiScore -  (hiScore % 60)*60}`
-            }
-            else {
-                document.querySelector(".hi-score").innerHTML = `00:${hiScore}`
-            }
+            document.querySelector(".score-time").style.display = "flex";
+            document.querySelector(".score-min").innerHTML = innerMin
+            document.querySelector(".score-sec").innerHTML = innerSec
         }
 
         else if (thing == "lose"){
-            document.querySelector(".score-value").style.display = "none"
+            document.querySelector(".score-value").innerHTML = "You lost"
+            document.querySelector(".score-time").style.display = "none"
         }
     }, 500);
 }

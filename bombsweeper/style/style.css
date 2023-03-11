@@ -136,21 +136,11 @@ body {
   background-color: #ccc;
   display: none;
 }
-.score-board {
+.score-value {
   display: flex;
   align-items: center;
   gap: 15px;
-}
-.score-board .value, .score-board .highest {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.score-board .value img, .score-board .highest img {
-  width: 45px;
-}
-.score-board .value .score-value, .score-board .value .hi-score, .score-board .highest .score-value, .score-board .highest .hi-score {
-  font-size: 20px;
+  font-size: 1.2rem;
 }
 .score .play-again {
   text-decoration: none;
