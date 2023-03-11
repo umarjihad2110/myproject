@@ -272,7 +272,7 @@ function checkColorRed(element,number,row,column,nothingRed=false){
 
 // enter number
 let firstClick = 0
-document.addEventListener("keyup",function(el){
+document.addEventListener("keydown",function(el){
     let key = parseInt(el.key)
     if (arrNumbers.includes(key) && !done){
         enterNumber(key)
