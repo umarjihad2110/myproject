@@ -314,7 +314,7 @@ function enterNumber(number){
             
             
             // number is wrong
-            if (number != newNumbersTemplate[index]){
+            if (number != sudokuGrid[index]){
                 newBoxes[index].classList.add("color-red")
 
                 checkRowColum(element,number,row,column)
