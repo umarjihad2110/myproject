@@ -67,8 +67,7 @@ body {
   top: 0;
   left: 0;
   z-index: 1;
-  -webkit-animation: show-hide 0.5s alternate infinite;
-          animation: show-hide 0.5s alternate infinite;
+  animation: show-hide 0.5s alternate infinite;
 }
 .words-wrapper word {
   display: inline-flex;
@@ -114,7 +113,7 @@ body {
   align-items: center;
   font-size: 20px;
 }
-.score-wrap a {
+.score-wrap .type-again {
   padding: 5px 10px;
   background-color: green;
   border-radius: 5px;
@@ -122,18 +121,10 @@ body {
   text-decoration: none;
   box-shadow: 0 0 10px -2px #000;
   transition: all 0.3s;
+  cursor: pointer;
 }
-.score-wrap a:hover {
+.score-wrap .type-again:hover {
   background-color: rgba(0, 128, 0, 0.7);
-}
-
-@-webkit-keyframes show-hide {
-  0% {
-    transform: scaleY(1);
-  }
-  100% {
-    transform: scaleY(0);
-  }
 }
 
 @keyframes show-hide {
