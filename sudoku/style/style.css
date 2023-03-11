@@ -80,7 +80,7 @@ body {
   color: red;
 }
 .container .content .big-box .bg-red {
-  background-color: rgba(255, 0, 0, 0.7);
+  background-color: rgba(255, 0, 0, 0.5);
 }
 .container .content .big-box .click {
   background-color: #549abb;
