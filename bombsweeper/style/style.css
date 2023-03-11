@@ -152,15 +152,16 @@ body {
 .score-board .value .score-value, .score-board .value .hi-score, .score-board .highest .score-value, .score-board .highest .hi-score {
   font-size: 20px;
 }
-.score a {
+.score .play-again {
   text-decoration: none;
   color: black;
   border-radius: 5px;
   padding: 5px 10px;
   background-color: #067d68;
   transition: all 0.2s;
+  cursor: pointer;
 }
-.score a:hover {
+.score .play-again:hover {
   box-shadow: 0 0 5px -1px #333;
 }
 

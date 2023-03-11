@@ -175,13 +175,14 @@ body{
         }
     }
 
-    a{
+    .play-again{
         text-decoration: none;
         color: black;
         border-radius: 5px;
         padding: 5px 10px;
         background-color: #067d68;
         transition: all .2s;
+        cursor: pointer;
 
         &:hover{
             box-shadow: 0 0 5px -1px #333;
