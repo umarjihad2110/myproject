@@ -16,6 +16,26 @@ body{
     background-color: #62bf9e;
 }
 
+.info{
+    width: 95vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: -20px;
+    display: none;
+
+    .timer{
+        display: flex;
+        align-items: center;
+        align-self: center;
+        font-size: 1.2rem;
+        
+        .sec,.min,.hour{
+            font-size: 1.25rem;
+            font-family: 'Courier Prime', monospace;
+        }
+    }
+}
 
 .container{
     display: flex;
@@ -45,7 +65,7 @@ body{
             transition: all 1.5s;
             display: none;
 
-            .gg{
+            .finish-text{
                 font-family: 'Pacifico', cursive;
                 font-size: 50px;
             }
@@ -74,6 +94,8 @@ body{
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                transition: all .2s;
+                user-select: none;
             }
 
             .side-click{
@@ -103,19 +125,11 @@ body{
         flex-direction: column;
         gap: 15px;
 
-        .timer{
-            display: flex;
-            align-items: center;
+        .mistake{
             align-self: center;
-            font-size: 1.2rem;
-            
-            .sec,.min,.hour{
-                font-size: 1.25rem;
-                font-family: 'Courier Prime', monospace;
-            }
         }
 
-        .top{
+        .mid{
             display: flex;
             align-items: center;
             gap: 10px;
@@ -129,6 +143,7 @@ body{
                 background-color: rgb(255,255,255,.4); 
                 cursor: pointer; 
                 transition: all .2s;
+                user-select: none;
 
                 &:hover{
                     background-color: rgb(255,255,255,.6);
@@ -146,6 +161,7 @@ body{
                 text-align: center;
                 cursor: pointer;
                 transition: all .2s;
+                user-select: none;
 
                 &:hover{
                     background-color: rgb(255,255,255,.6);
@@ -168,10 +184,23 @@ body{
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                user-select: none;
 
                 &:hover{
                     background-color: rgb(255,255,255,.6);
                 }
+            }
+        }
+
+        .timer{
+            display: flex;
+            align-items: center;
+            align-self: center;
+            font-size: 1.2rem;
+            
+            .sec,.min,.hour{
+                font-size: 1.25rem;
+                font-family: 'Courier Prime', monospace;
             }
         }
     }
