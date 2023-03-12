@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Random Group</title>
+    <link rel="stylesheet" href="style copy/style.css">
+    <link rel="icon" href="pic/people.png">
+</head>
+<body>
+    <h1>Create a Random Group</h1>
+    
+    <div class="content">
+        <div class="people">
+            <label for="people">Number of people</label>
+            <input type="number" id="people" autofocus>
+        </div>
+
+        <div class="groups">
+            <label for="groups">Number of group</label>
+            <input type="number" id="groups">
+        </div>
+
+        <div class="change-type">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrows-left-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M21 17l-18 0"></path>
+                <path d="M6 10l-3 -3l3 -3"></path>
+                <path d="M3 7l18 0"></path>
+                <path d="M18 20l3 -3l-3 -3"></path>
+            </svg>
+            <span>Change type</span>
+        </div>
+
+        <div class="names">
+            <label for="name">Name</label>
+            <input type="text" id="name">
+            <div class="enter">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-badge-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M13 7h-6l4 5l-4 5h6l4 -5z"></path>
+                </svg>
+            </div>
+        </div>
+
+        <div class="auto-info">*Type "n=number of people" for auto list</div>
+    </div>
+
+    <div class="wrap">
+        <ul class="name-list"></ul>
+
+        <div class="buttons">
+            <button class="generate">Generate</button>
+            <button class="clear">Clear all</button>
+        </div>
+
+        <div class="result"></div>
+    </div>
+
+    <script src="app copy.js"></script>
+</body>
+</html>

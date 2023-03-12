@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 35px 20px;
+    background: linear-gradient(to right, #5254d9, #35a173);
+}
+
+.content{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .people,.groups,.names{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        input{
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            background-color: #eee;
+        }
+    }
+
+    .names{
+        margin-top: 20px;
+        align-self: center;
+        position: relative;
+
+        input{
+            width: 100%;
+        }
+
+        .enter{
+            border-radius: 5px;
+            background-color: #eee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            transition: all .2s;
+
+            &:hover{
+                background-color: #ddd;
+            }
+        }
+    }
+
+    .auto-info{
+        font-size: .78rem;
+        align-self: flex-end;
+    }
+}
+
+.wrap{
+    width: calc(100vw - 40px);
+    display: flex;
+    flex-direction: column;
+
+    .name-list{
+        margin-top: 20px;
+        width: 90vw;
+        display: flex;
+        list-style: none;
+        gap: 10px;
+        flex-wrap: wrap;
+        display: none;
+    
+        li{
+            padding: 5px;
+            border-radius: 5px;
+    
+            .color{
+                border-radius: 2px;
+                padding: 0 4px;
+                background-color: rgb(255,255,255,.5);
+                font-family: 'Nunito', sans-serif;
+                user-select: none;
+                transition: all .1s;
+    
+                &:hover{
+                    background-color: red;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .buttons{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .generate,.clear{
+            margin-top: 15px;
+            padding: 5px 8px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            background-color: rgb(255,255,255,.5);
+            transition: all .2s;
+            font-size: 1rem;
+            display: none;
+        
+            &:hover{
+                background-color: rgb(255,255,255,.9);
+            }
+        }
+    }
+
+    .result{
+        align-self: center;
+        margin-top: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    
+        ul{
+            padding: 10px 15px;
+            border-radius: 5px;
+            background-color: rgb(255,255,255,.2);
+    
+            h5{
+                border-bottom: 1px solid black;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body{
+        padding: 35px 10px;
+    }
+
+    .content{
+        width: 100%;
+
+        .people,.groups,.names{
+            flex-direction: column;
+            align-items: flex-start;
+            
+            input{
+                width: 100%;
+            }
+        }
+    }
+}
