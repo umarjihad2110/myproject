@@ -22,7 +22,7 @@ body{
     flex-direction: column;
     gap: 10px;
 
-    .people,.groups,.names{
+    .people,.groups,.names_1{
         display: flex;
         align-items: center;
         gap: 5px;
@@ -36,8 +36,23 @@ body{
         }
     }
 
-    .names{
-        margin-top: 20px;
+    .change-type{
+        align-self: center;
+        padding: 5px;
+        border-radius: 50%;
+        background-color: rgb(255,255,255,.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all .2s;
+
+        &:hover{
+            background-color: rgb(255,255,255,.6);
+        }
+    }
+
+    .names_1{
         align-self: center;
         position: relative;
 
@@ -141,6 +156,21 @@ body{
                 border-bottom: 1px solid black;
             }
         }
+    }
+}
+
+.test{
+    display: flex;
+    padding: 40px;
+    background-color: #bbb;
+    border-radius: 30px;
+    flex-direction: column;
+    gap: 10px;
+
+    div{
+        padding: 10px;
+        background-color: lime;
+        border-radius: 10px;
     }
 }
 

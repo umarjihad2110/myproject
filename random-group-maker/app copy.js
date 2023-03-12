@@ -3,7 +3,7 @@ var out = console.log.bind(document)
 window.addEventListener("load",function(){
 
     // input width
-    document.querySelector(".names").style.width = `${document.querySelector(".content").clientWidth}px`
+    document.querySelector(".names_1").style.width = `${document.querySelector(".content").clientWidth}px`
 
     if (window.matchMedia("(min-width: 600px)").matches){
         document.querySelector("#groups").style.width = `${document.querySelector(".groups").clientWidth - (document.querySelector(".groups label").clientWidth + 5)}px`

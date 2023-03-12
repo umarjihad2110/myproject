@@ -7,6 +7,7 @@
     <title>Create Random Group</title>
     <link rel="stylesheet" href="style copy/style.css">
     <link rel="icon" href="pic/people.png">
+    <script src="//unpkg.com/alpinejs" defer></script>
 </head>
 <body>
     <h1>Create a Random Group</h1>
@@ -22,7 +23,7 @@
             <input type="number" id="groups">
         </div>
 
-        <div class="change-type">
+        <div class="change-type" title="Change type">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrows-left-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                 <path d="M21 17l-18 0"></path>
@@ -30,10 +31,9 @@
                 <path d="M3 7l18 0"></path>
                 <path d="M18 20l3 -3l-3 -3"></path>
             </svg>
-            <span>Change type</span>
         </div>
 
-        <div class="names">
+        <div class="names_1">
             <label for="name">Name</label>
             <input type="text" id="name">
             <div class="enter">
@@ -43,6 +43,8 @@
                 </svg>
             </div>
         </div>
+
+
 
         <div class="auto-info">*Type "n=number of people" for auto list</div>
     </div>
@@ -56,6 +58,12 @@
         </div>
 
         <div class="result"></div>
+    </div>
+
+    <div x-data="{open: false}" class="test">
+        <button @click="open = !open">klik</button>
+        <div x-show="open">Text_1</div>
+        <div x-show="!open">Text_2</div>
     </div>
 
     <script src="app copy.js"></script>
