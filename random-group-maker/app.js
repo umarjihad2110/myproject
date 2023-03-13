@@ -488,7 +488,7 @@ generate.addEventListener("click",function(){
         if (people < groups){
             alert("The number of groups is more than people")
         }
-        
+
         else if (people != q){
             alert("The number of people does not match")
         }
@@ -677,9 +677,6 @@ function generateGroup(type){
             result.innerHTML = ""
             numberList = 1
             arrNames = []
-            
-            generate.classList.add("hide")
-            generate.classList.remove("show-inline")
 
             clear.classList.add("hide")
             clear.classList.remove("show-inline")
