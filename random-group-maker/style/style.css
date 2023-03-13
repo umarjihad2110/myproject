@@ -171,11 +171,11 @@ body {
   .content {
     width: 100%;
   }
-  .content .people, .content .groups, .content .names {
+  .content .people, .content .groups, .content .names_1 {
     flex-direction: column;
     align-items: flex-start;
   }
-  .content .people input, .content .groups input, .content .names input {
+  .content .people input, .content .groups input, .content .names_1 input {
     width: 100%;
   }
 }/*# sourceMappingURL=style.css.map */

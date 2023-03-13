@@ -485,7 +485,11 @@ generate.addEventListener("click",function(){
         let q = numberList - 1
         
         // the number doesn't match
-        if (people != q){
+        if (people < groups){
+            alert("The number of groups is more than people")
+        }
+        
+        else if (people != q){
             alert("The number of people does not match")
         }
 
