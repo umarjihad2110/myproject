@@ -107,7 +107,7 @@ enter.addEventListener("click",function(){
         alert("Please enter number of group first")
     }
 
-    else if (name != "" && numberList <= people && people <= groups){
+    else if (name != "" && numberList <= people && people >= groups){
         if (name == `n=${people}` && numberList == 1){
             autoList()
         }
@@ -149,7 +149,7 @@ namesInput.addEventListener("keydown",function(el){
         alert("Please input number of group first")
     }
 
-    else if (name != "" && x == "Enter" && numberList <= people && people <= groups){
+    else if (name != "" && x == "Enter" && numberList <= people && people >= groups){
         if (name == `n=${people}` && numberList == 1){
             autoList()
         }
@@ -278,25 +278,28 @@ function nameToList(){
 
     // the number of group change
     sumGroups.addEventListener("keyup",function(el){
-        let p = parseInt(sumGroups.value)
-        let array = ["Backspace","ArrowUp","ArrowDown","0","1",'2',"3","4",'5',"6","7",'8',"9"]
-        let x = el.key
-        let q = parseInt(sumPeople.value)
-  
-        // generate button display
-        if (p != numberList - 1 && array.includes(x)){
-            result.innerHTML = ''
-        }
+        
+        if (type1.classList.contains("show")){
+            let p = parseInt(sumGroups.value)
+            let array = ["Backspace","ArrowUp","ArrowDown","0","1",'2',"3","4",'5',"6","7",'8',"9"]
+            let x = el.key
+            let q = parseInt(sumPeople.value)
+    
+            // generate button display
+            if (p != numberList - 1 && array.includes(x)){
+                result.innerHTML = ''
+            }
 
-        if (sumGroups.value == ""){
-            generate.classList.add("hide")
-            generate.classList.remove("show-inline")
-        }
+            if (sumGroups.value == ""){
+                generate.classList.add("hide")
+                generate.classList.remove("show-inline")
+            }
 
-        else {
-            if (numberList > 1 && q == numberList - 1){
-                generate.classList.add("show-inline")
-                generate.classList.remove("hide")
+            else {
+                if (numberList > 1 && q == numberList - 1){
+                    generate.classList.add("show-inline")
+                    generate.classList.remove("hide")
+                }
             }
         }
     })
@@ -433,25 +436,28 @@ function autoList(){
 
     // the number of group change
     sumGroups.addEventListener("keyup",function(el){
-        let p = parseInt(sumGroups.value)
-        let array = ["Backspace","ArrowUp","ArrowDown","0","1",'2',"3","4",'5',"6","7",'8',"9"]
-        let x = el.key
-        let q = parseInt(sumPeople.value)
-  
-        // generate button display
-        if (p != numberList - 1 && array.includes(x)){
-            result.innerHTML = ''
-        }
-
-        if (sumGroups.value == ""){
-            generate.classList.add("hide")
-            generate.classList.remove("show-inline")
-        }
-
-        else {
-            if (numberList > 1 && q == numberList - 1){
-                generate.classList.add("show-inline")
-                generate.classList.remove("hide")
+        
+        if (type1.classList.contains("show")){
+            let p = parseInt(sumGroups.value)
+            let array = ["Backspace","ArrowUp","ArrowDown","0","1",'2',"3","4",'5',"6","7",'8',"9"]
+            let x = el.key
+            let q = parseInt(sumPeople.value)
+            
+            // generate button display
+            if (p != numberList - 1 && array.includes(x)){
+                result.innerHTML = ''
+            }
+            
+            if (sumGroups.value == ""){
+                generate.classList.add("hide")
+                generate.classList.remove("show-inline")
+            }
+            
+            else {
+                if (numberList > 1 && q == numberList - 1){
+                    generate.classList.add("show-inline")
+                    generate.classList.remove("hide")
+                }
             }
         }
     })
@@ -529,7 +535,7 @@ generate.addEventListener("click",function(){
         }
         
         // number is matching
-        else if (people == arrNames.length){
+        else if (people == arrNames.length && people >= groups){
             result.innerHTML = ""
             arrNames = shuffleArray(arrNames)
             generateGroup("type2")
@@ -679,18 +685,21 @@ function generateGroup(type){
 
         // the number of group change
         sumGroups.addEventListener("keyup",function(el){
-            let people = parseInt(sumGroups.value)
             
-            let key = el.key
-            let array = ["Backspace","ArrowUp","ArrowDown","0","1",'2',"3","4",'5',"6","7",'8',"9"]
-    
-            // generate button display
-            if (people != numberList - 1 && array.includes(key)){
-                result.innerHTML = ''
-            }
+            if (type2.classList.contains("show")){
+                let people = parseInt(sumGroups.value)
+                
+                let key = el.key
+                let array = ["Backspace","ArrowUp","ArrowDown","0","1",'2',"3","4",'5',"6","7",'8',"9"]
+        
+                // generate button display
+                if (people != numberList - 1 && array.includes(key)){
+                    result.innerHTML = ''
+                }
 
-            clear.classList.add("hide")
-            clear.classList.remove("show-inline")
+                clear.classList.add("hide")
+                clear.classList.remove("show-inline")
+            }
         })
     }
 }
