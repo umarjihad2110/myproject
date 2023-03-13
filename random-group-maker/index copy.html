@@ -12,7 +12,7 @@
 <body>
     <h1>Create a Random Group</h1>
     
-    <div class="content">
+    <div class="content" x-data="{open1: true}">
         <div class="people">
             <label for="people">Number of people</label>
             <input type="number" id="people" autofocus>
@@ -23,7 +23,7 @@
             <input type="number" id="groups">
         </div>
 
-        <div class="change-type" title="Change type">
+        <div class="change-type" title="Change type" @click="open1 = !open1">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrows-left-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                 <path d="M21 17l-18 0"></path>
@@ -33,9 +33,9 @@
             </svg>
         </div>
 
-        <div class="names_1">
-            <label for="name">Name</label>
-            <input type="text" id="name">
+        <div class="names_1" x-show="open1">
+            <label for="name_1">Name</label>
+            <input type="text" id="name_1">
             <div class="enter">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-badge-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -43,10 +43,12 @@
                 </svg>
             </div>
         </div>
+        <div class="auto-info" x-show="open1">*Type "n=number of people" for auto list</div>
 
-
-
-        <div class="auto-info">*Type "n=number of people" for auto list</div>
+        <div class="names_2" x-show="!open1">
+            <label for="name_2">Names</label>
+            <textarea id="name_2" rows="10"></textarea>
+        </div>
     </div>
 
     <div class="wrap">
@@ -58,12 +60,6 @@
         </div>
 
         <div class="result"></div>
-    </div>
-
-    <div x-data="{open: false}" class="test">
-        <button @click="open = !open">klik</button>
-        <div x-show="open">Text_1</div>
-        <div x-show="!open">Text_2</div>
     </div>
 
     <script src="app copy.js"></script>

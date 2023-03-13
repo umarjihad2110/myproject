@@ -10,14 +10,16 @@ window.addEventListener("load",function(){
     }
 
     // enter height and width
-    document.querySelector(".enter").style.height = `${document.querySelector("#name").clientHeight}px`
-    document.querySelector(".enter").style.width = `${document.querySelector("#name").clientHeight}px`
+    document.querySelector(".enter").style.height = `${document.querySelector("#name_1").clientHeight}px`
+    document.querySelector(".enter").style.width = `${document.querySelector("#name_1").clientHeight}px`
 
     // name input padding
-    document.querySelector("#name").style.paddingRight = `${document.querySelector(".enter").clientWidth + 5}px`
+    document.querySelector("#name_1").style.paddingRight = `${document.querySelector(".enter").clientWidth + 5}px`
 
     out()
 })
+
+// -------------> type_1
 
 // set the focus input
 const sumPeople = document.querySelector("#people")
@@ -72,7 +74,7 @@ enter.addEventListener("click",function(){
 })
 
 // input the names
-const namesInput = document.querySelector("#name")
+const namesInput = document.querySelector("#name_1")
 const nameList = document.querySelector(".name-list")
 
 const generate = document.querySelector(".generate")
@@ -373,11 +375,6 @@ function autoList(){
     namesInput.focus();
 }
 
-// // function remove name
-// function removeName(){
-
-// }
-
 // generate groups
 const result = document.querySelector(".result")
 
@@ -398,6 +395,9 @@ generate.addEventListener("click",function(){
         generateGroup()
     }
 })
+
+// -------------> type_2
+
 
 // input list to result element
 function generateGroup(){
