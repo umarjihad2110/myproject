@@ -67,7 +67,7 @@ body {
   transition: all 0.2s;
 }
 .content .names_1 .enter:hover {
-  background-color: #ddd;
+  background-color: #ccc;
 }
 .content .auto-info {
   font-size: 0.78rem;
@@ -83,6 +83,12 @@ body {
   border: none;
   outline: none;
   background-color: #eee;
+}
+.content .show {
+  display: flex;
+}
+.content .hide {
+  display: none;
 }
 
 .wrap {
@@ -136,6 +142,12 @@ body {
 .wrap .buttons .generate:hover, .wrap .buttons .clear:hover {
   background-color: rgba(255, 255, 255, 0.9);
 }
+.wrap .buttons .show-inline {
+  display: flex;
+}
+.wrap .buttons .hide {
+  display: none;
+}
 .wrap .result {
   align-self: center;
   margin-top: 15px;
@@ -150,20 +162,6 @@ body {
 }
 .wrap .result ul h5 {
   border-bottom: 1px solid black;
-}
-
-.test {
-  display: flex;
-  padding: 40px;
-  background-color: #bbb;
-  border-radius: 30px;
-  flex-direction: column;
-  gap: 10px;
-}
-.test div {
-  padding: 10px;
-  background-color: lime;
-  border-radius: 10px;
 }
 
 @media screen and (max-width: 600px) {

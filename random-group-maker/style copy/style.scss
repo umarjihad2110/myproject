@@ -73,7 +73,7 @@ body{
             transition: all .2s;
 
             &:hover{
-                background-color: #ddd;
+                background-color: #ccc;
             }
         }
     }
@@ -94,6 +94,14 @@ body{
             outline: none;
             background-color: #eee;
         }
+    }
+
+    .show{
+        display: flex;
+    }
+
+    .hide{
+        display: none;
     }
 }
 
@@ -151,6 +159,14 @@ body{
                 background-color: rgb(255,255,255,.9);
             }
         }
+
+        .show-inline{
+            display: flex;
+        }
+    
+        .hide{
+            display: none;
+        }
     }
 
     .result{
@@ -169,21 +185,6 @@ body{
                 border-bottom: 1px solid black;
             }
         }
-    }
-}
-
-.test{
-    display: flex;
-    padding: 40px;
-    background-color: #bbb;
-    border-radius: 30px;
-    flex-direction: column;
-    gap: 10px;
-
-    div{
-        padding: 10px;
-        background-color: lime;
-        border-radius: 10px;
     }
 }
 

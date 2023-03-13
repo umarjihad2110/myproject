@@ -12,7 +12,7 @@
 <body>
     <h1>Create a Random Group</h1>
     
-    <div class="content" x-data="{open1: true}">
+    <div class="content">
         <div class="people">
             <label for="people">Number of people</label>
             <input type="number" id="people" autofocus>
@@ -33,7 +33,7 @@
             </svg>
         </div>
 
-        <div class="names_1" x-show="open1">
+        <div class="names_1 show">
             <label for="name_1">Name</label>
             <input type="text" id="name_1">
             <div class="enter">
@@ -43,9 +43,9 @@
                 </svg>
             </div>
         </div>
-        <div class="auto-info" x-show="open1">*Type "n=number of people" for auto list</div>
+        <div class="auto-info show">*Type "n=number of people" for auto list</div>
 
-        <div class="names_2" x-show="!open1">
+        <div class="names_2 hide">
             <label for="name_2">Names</label>
             <textarea id="name_2" rows="10"></textarea>
         </div>
@@ -55,8 +55,8 @@
         <ul class="name-list"></ul>
 
         <div class="buttons">
-            <button class="generate">Generate</button>
-            <button class="clear">Clear all</button>
+            <button class="generate hide">Generate</button>
+            <button class="clear hide">Clear all</button>
         </div>
 
         <div class="result"></div>

@@ -15,8 +15,45 @@ window.addEventListener("load",function(){
 
     // name input padding
     document.querySelector("#name_1").style.paddingRight = `${document.querySelector(".enter").clientWidth + 5}px`
+})
 
-    out()
+// change type
+const change = document.querySelector(".change-type")
+
+const type1 = document.querySelector(".names_1")
+const type2 = document.querySelector(".names_2")
+
+const autoInfo = document.querySelector(".auto-info")
+
+change.addEventListener("click",function(){
+    type1.classList.toggle("show")
+    type1.classList.toggle("hide")
+
+    type2.classList.toggle("show")
+    type2.classList.toggle("hide")
+
+    autoInfo.classList.toggle("show-inline")
+    autoInfo.classList.toggle("hide")
+
+    if (type2.classList.contains("show")){
+        generate.classList.add("show-inline")
+        generate.classList.remove("hide")
+    }
+
+    else if (type1.classList.contains("show")){
+        generate.classList.add("hide")
+        generate.classList.remove("show-inline")
+    }
+    
+    clear.classList.add("hide")
+    clear.classList.remove("show-inline")
+
+    result.innerHTML = ""
+    nameList.innerHTML = ""
+    numberList = 1
+    arrNames = []
+
+    sumPeople.focus()
 })
 
 // -------------> type_1
@@ -38,8 +75,11 @@ sumGroups.addEventListener("keyup",function(el){
     let x = el.key
     let p = el.value
 
-    if (x == "Enter" && p != ""){
+    if (x == "Enter" && p != "" && type1.classList.contains("show")){
         namesInput.focus()
+    }
+    else if (x == "Enter" && p != "" && type2.classList.contains("show")){
+        nameListInput.focus()
     }
 })
 
@@ -51,19 +91,23 @@ enter.addEventListener("click",function(){
     let people = parseInt(sumPeople.value)
     let groups = parseInt(sumGroups.value)
 
-    if (name != "" && isNaN(people) && isNaN(groups)){
-        alert("Please input number of people and group first")
+    if (name != "" && people < groups){
+        alert("The number of groups is more than people")
+    }
+
+    else if (name != "" && isNaN(people) && isNaN(groups)){
+        alert("Please enter number of people and group first")
     }
     
     else if (name != "" && isNaN(people)){
-        alert("Please input number of people first")
+        alert("Please enter number of people first")
     }
 
     else if (name != "" && isNaN(groups)){
-        alert("Please input number of group first")
+        alert("Please enter number of group first")
     }
 
-    else if (name != "" && numberList <= people){
+    else if (name != "" && numberList <= people && people <= groups){
         if (name == `n=${people}` && numberList == 1){
             autoList()
         }
@@ -80,7 +124,7 @@ const nameList = document.querySelector(".name-list")
 const generate = document.querySelector(".generate")
 const clear = document.querySelector(".clear")
 
-var arrNames = []
+let arrNames = []
 
 let numberList = 1
 namesInput.addEventListener("keydown",function(el){
@@ -89,7 +133,11 @@ namesInput.addEventListener("keydown",function(el){
     let people = parseInt(sumPeople.value)
     let groups = parseInt(sumGroups.value)
 
-    if (name != "" && x == "Enter" && isNaN(people) && isNaN(groups)){
+    if (name != "" && x == "Enter" && people < groups){
+        alert("The number of groups is more than people")
+    }
+
+    else if (name != "" && x == "Enter" && isNaN(people) && isNaN(groups)){
         alert("Please input number of people and group first")
     }
 
@@ -101,7 +149,7 @@ namesInput.addEventListener("keydown",function(el){
         alert("Please input number of group first")
     }
 
-    else if (name != "" && x == "Enter" && numberList <= people){
+    else if (name != "" && x == "Enter" && numberList <= people && people <= groups){
         if (name == `n=${people}` && numberList == 1){
             autoList()
         }
@@ -121,28 +169,38 @@ function nameToList(){
       
     // generate button display
     if (numberList == people){
-        generate.style.display = "inline"
+        generate.classList.remove("hide")
+        generate.classList.add("show-inline")
     }
     
     else {
-        generate.style.display = "none"
+        generate.classList.add("hide")
+        generate.classList.remove("show-inline")
     }
 
     // clear button display
-    clear.style.display = "inline"
+    clear.classList.add("show-inline")
+    clear.classList.remove("hide")
 
     // clear all the names
     clear.addEventListener("click",function(){
         nameList.innerHTML = ''
-        generate.style.display = "none"
         result.innerHTML = ""
-        clear.style.display = "none"
         numberList = 1
+        arrNames = []
+        
+        generate.classList.add("hide")
+        generate.classList.remove("show-inline")
+
+        clear.classList.add("hide")
+        clear.classList.remove("show-inline")
+        
+        namesInput.focus();
     })
 
-    var number = document.createElement("span")
-    var member = document.createElement("span")
-    var li = document.createElement("li")
+    let number = document.createElement("span")
+    let member = document.createElement("span")
+    let li = document.createElement("li")
 
     number.classList.add("color")
 
@@ -180,19 +238,23 @@ function nameToList(){
         
         // clear button display
         if (arrNames.length == 0){
-            clear.style.display = "none"
+            clear.classList.add("hide")
+            clear.classList.remove("show-inline")
         }
 
         let q = parseInt(sumPeople.value)
   
         // generate button display
         if (q != numberList - 1){
-            generate.style.display = "none"
+            generate.classList.add("hide")
+            generate.classList.remove("show-inline")
+
             result.innerHTML = ''
         }
 
         else {
-            generate.style.display = "inline"
+            clear.classList.add("show-inline")
+            clear.classList.remove("hide")
         }
     })
 
@@ -202,12 +264,15 @@ function nameToList(){
           
         // generate button display
         if (p != numberList - 1){
-            generate.style.display = "none"
+            generate.classList.add("hide")
+            generate.classList.remove("show-inline")
+
             result.innerHTML = ''
         }
 
         else{
-            generate.style.display = "inline"
+            generate.classList.add("show-inline")
+            generate.classList.remove("hide")
         }
     })
 
@@ -224,12 +289,14 @@ function nameToList(){
         }
 
         if (sumGroups.value == ""){
-            generate.style.display = "none"
+            generate.classList.add("hide")
+            generate.classList.remove("show-inline")
         }
 
         else {
             if (numberList > 1 && q == numberList - 1){
-                generate.style.display = "inline"
+                generate.classList.add("show-inline")
+                generate.classList.remove("hide")
             }
         }
     })
@@ -247,32 +314,42 @@ function autoList(){
 
     // generate button display
     if (numberList == people){
-        generate.style.display = "inline"
+        generate.classList.add("show-inline")
+        generate.classList.remove("hide")
     }
     
     else {
-        generate.style.display = "none"
+        generate.classList.add("hide")
+        generate.classList.remove("show-inline")
     }
 
     // clear button display
-    clear.style.display = "inline"
+    clear.classList.add("show-inline")
+    clear.classList.remove("hide")
 
     // clear all the names
     clear.addEventListener("click",function(){
         nameList.innerHTML = ''
-        generate.style.display = "none"
         result.innerHTML = ""
-        clear.style.display = "none"
         numberList = 1
+        arrNames = []
+        
+        generate.classList.add("hide")
+        generate.classList.remove("show-inline")
+
+        clear.classList.add("none")
+        clear.classList.remove("show-inline")
+        
+        namesInput.focus();
     })
 
     for (let i = 1 ; i <= people ; i++){
         // add names to array
         arrNames.push(i)
 
-        var number = document.createElement("span")
-        var member = document.createElement("span")
-        var li = document.createElement("li")
+        let number = document.createElement("span")
+        let member = document.createElement("span")
+        let li = document.createElement("li")
 
         number.classList.add("color")
 
@@ -290,7 +367,7 @@ function autoList(){
         nameList.style.display = "flex"
     }
 
-    var numbers = document.querySelectorAll(".color")
+    let numbers = document.querySelectorAll(".color")
 
     // remove names form list
     numbers.forEach(function(number){
@@ -315,19 +392,23 @@ function autoList(){
             
             // clear button display
             if (arrNames.length == 0){
-                clear.style.display = "none"
+                clear.classList.add("hide")
+                clear.classList.remove("show-inline")
             }
     
             let q = parseInt(sumPeople.value)
       
             // generate button display
             if (q != numberList - 1){
-                generate.style.display = "none"
+                generate.classList.add("hide")
+                generate.classList.remove("show-inline")
+                
                 result.innerHTML = ''
             }
     
             else {
-                generate.style.display = "inline"
+                generate.classList.add("show-inline")
+                generate.classList.remove("hide")
             }
         })
     })
@@ -338,12 +419,15 @@ function autoList(){
           
         // generate button display
         if (p != numberList - 1){
-            generate.style.display = "none"
+            generate.classList.add("hide")
+            generate.classList.remove("show-inline")
+
             result.innerHTML = ''
         }
 
         else{
-            generate.style.display = "inline"
+            generate.classList.add("show-inline")
+            generate.classList.remove("hide")
         }
     })
 
@@ -360,12 +444,14 @@ function autoList(){
         }
 
         if (sumGroups.value == ""){
-            generate.style.display = "none"
+            generate.classList.add("hide")
+            generate.classList.remove("show-inline")
         }
 
         else {
             if (numberList > 1 && q == numberList - 1){
-                generate.style.display = "inline"
+                generate.classList.add("show-inline")
+                generate.classList.remove("hide")
             }
         }
     })
@@ -375,89 +461,243 @@ function autoList(){
     namesInput.focus();
 }
 
+// -------------> type_2
+const nameListInput = document.querySelector("#name_2")
+
 // generate groups
 const result = document.querySelector(".result")
 
 // click genearate button
 let check = 0
 generate.addEventListener("click",function(){
-    let p = parseInt(sumPeople.value)
-    let q = numberList - 1
     
-    // the number doesn't match
-    if (p != q){
-        alert("The number of people does not match")
+    // get people and group number
+    let people = parseInt(sumPeople.value)
+    let groups = parseInt(sumGroups.value)
+
+    if (type1.classList.contains("show")){
+        let q = numberList - 1
+        
+        // the number doesn't match
+        if (people != q){
+            alert("The number of people does not match")
+        }
+
+        // number is matching
+        else if (people == q){
+            result.innerHTML = ""
+            arrNames = shuffleArray(arrNames)
+            generateGroup("type1")
+        }
     }
 
-    else if (p == q){
-        result.innerHTML = ""
-        shuffleArray()
-        generateGroup()
+    else if (type2.classList.contains("show")){
+
+        // textarea value into array
+        arrNames = nameListInput.value.split("\n")
+        
+        for (let i = 0 ; i < arrNames.length ; i++){
+            if (arrNames[i] == ""){
+                let index = arrNames.indexOf(arrNames[i])
+                
+                arrNames.splice(index,1)
+            }
+        } 
+
+        if (people < groups){
+            alert("The number of groups is more than people")
+        }
+
+        else if (isNaN(people) && isNaN(groups)){
+            alert("Please enter number of people and group first")
+        }
+        
+        else if (isNaN(people)){
+            alert("Please enter number of people first")
+        }
+    
+        else if (isNaN(groups)){
+            alert("Please enter number of group first")
+        }
+
+        else if (nameListInput.value == ""){
+            alert("Please enter your name list first")
+        }
+        
+        else if (people != arrNames.length){
+            alert("The number of people does not match")
+        }
+        
+        // number is matching
+        else if (people == arrNames.length){
+            result.innerHTML = ""
+            arrNames = shuffleArray(arrNames)
+            generateGroup("type2")
+        }
     }
 })
 
-// -------------> type_2
-
-
 // input list to result element
-function generateGroup(){
+function generateGroup(type){
     
     let p = parseInt(sumPeople.value)
     let q = parseInt(sumGroups.value)
 
-    // make ul
-    for (let i = 0 ; i < q ; i++){
-        var ul = document.createElement("ul")
-        ul.classList.add("list-result")
+    if (type == "type1"){
 
-        var h5 = document.createElement("h5")
-        if (i == 0){
-            h5.innerText = "1st Group"
-        }
-        else if (i == 1){
-            h5.innerText = "2nd Group"
-        }
-        else if (i == 2){
-            h5.innerText = "3rd Group"
-        }
-        else {
-            h5.innerText = `${i+1}th Group` 
-        }
-        ul.appendChild(h5)
-        
-        // input li into ul
-        for (let j = 0 ; j < Math.floor(p/q) ; j++){
-            var li = document.createElement("li")
-            li.classList.add("list-item")
+        // make ul
+        for (let i = 0 ; i < q ; i++){
+            let ul = document.createElement("ul")
+            ul.classList.add("list-result")
+
+            let h5 = document.createElement("h5")
             
-            ul.appendChild(li)
-        }
-
-        result.appendChild(ul)
-    }
-
-    const listResult = document.querySelectorAll(".list-result")
-
-    // input the rest of li into ul
-    if (p % q != 0){
-        for (let j = 0 ; j < p % q ; j++){
-            var li = document.createElement("li")
-            li.classList.add("list-item")
+            if (i == 0){
+                h5.innerText = "1st Group"
+            }
             
-            listResult[j].appendChild(li)
+            else if (i == 1){
+                h5.innerText = "2nd Group"
+            }
+            
+            else if (i == 2){
+                h5.innerText = "3rd Group"
+            }
+            
+            else {
+                h5.innerText = `${i+1}th Group` 
+            }
+            
+            ul.appendChild(h5)
+            
+            // input li into ul
+            for (let j = 0 ; j < Math.floor(p/q) ; j++){
+                let li = document.createElement("li")
+                li.classList.add("list-item")
+                
+                ul.appendChild(li)
+            }
+
             result.appendChild(ul)
         }
+
+        const listResult = document.querySelectorAll(".list-result")
+
+        // input the rest of li into ul
+        if (p % q != 0){
+            for (let j = 0 ; j < p % q ; j++){
+                let li = document.createElement("li")
+                li.classList.add("list-item")
+                
+                listResult[j].appendChild(li)
+                result.insertBefore(listResult[(p % q) - 1 - j],result.children[0])
+            }
+        }
+
+        const listItem = document.querySelectorAll(".list-item")
+
+        listItem.forEach(function(el,i){
+            el.innerText = arrNames[i]
+        })
     }
 
-    const listItem = document.querySelectorAll(".list-item")
+    else if (type == "type2"){
+        
+        // make ul
+        for (let i = 0 ; i < q ; i++){
+            let ul = document.createElement("ul")
+            ul.classList.add("list-result")
 
-    listItem.forEach(function(el,i){
-        el.innerText = arrNames[i]
-    })
+            let h5 = document.createElement("h5")
+            
+            if (i == 0){
+                h5.innerText = "1st Group"
+            }
+            
+            else if (i == 1){
+                h5.innerText = "2nd Group"
+            }
+            
+            else if (i == 2){
+                h5.innerText = "3rd Group"
+            }
+            
+            else {
+                h5.innerText = `${i+1}th Group` 
+            }
+            
+            ul.appendChild(h5)
+            
+            // input li into ul
+            for (let j = 0 ; j < Math.floor(p/q) ; j++){
+                let li = document.createElement("li")
+                li.classList.add("list-item")
+                
+                ul.appendChild(li)
+            }
+
+            result.appendChild(ul)
+        }
+
+        const listResult = document.querySelectorAll(".list-result")
+
+        // input the rest of li into ul
+        if (p % q != 0){
+            for (let j = 0 ; j < p % q ; j++){
+                let li = document.createElement("li")
+                li.classList.add("list-item")
+                
+                listResult[j].appendChild(li)
+                result.insertBefore(listResult[(p % q) - 1 - j],result.children[0])
+            }
+        }
+
+        const listItem = document.querySelectorAll(".list-item")
+
+        listItem.forEach(function(el,i){
+            el.innerText = arrNames[i]
+        })
+
+        // click clear button
+        clear.classList.add("show-inline")
+        clear.classList.remove("hide")
+
+        clear.addEventListener("click",function(){
+            nameList.innerHTML = ''
+            result.innerHTML = ""
+            numberList = 1
+            arrNames = []
+            
+            generate.classList.add("hide")
+            generate.classList.remove("show-inline")
+
+            clear.classList.add("hide")
+            clear.classList.remove("show-inline")
+            
+            namesInput.focus();
+        })
+
+        // the number of group change
+        sumGroups.addEventListener("keyup",function(el){
+            let people = parseInt(sumGroups.value)
+            
+            let key = el.key
+            let array = ["Backspace","ArrowUp","ArrowDown","0","1",'2',"3","4",'5',"6","7",'8',"9"]
+    
+            // generate button display
+            if (people != numberList - 1 && array.includes(key)){
+                result.innerHTML = ''
+            }
+
+            clear.classList.add("hide")
+            clear.classList.remove("show-inline")
+        })
+    }
 }
 
 // shuffle array of names
-function shuffleArray() {
-    arrNames.sort(() => Math.random() - 0.5);
-    return arrNames
+function shuffleArray(array) {
+    array.sort(() => Math.random() - 0.5);
+    
+    return array
 }
