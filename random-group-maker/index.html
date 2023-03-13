@@ -22,9 +22,19 @@
             <input type="number" id="groups">
         </div>
 
-        <div class="names">
-            <label for="name">Name</label>
-            <input type="text" id="name">
+        <div class="change-type" title="Change type" @click="open1 = !open1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrows-left-right" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M21 17l-18 0"></path>
+                <path d="M6 10l-3 -3l3 -3"></path>
+                <path d="M3 7l18 0"></path>
+                <path d="M18 20l3 -3l-3 -3"></path>
+            </svg>
+        </div>
+
+        <div class="names_1 show">
+            <label for="name_1">Name</label>
+            <input type="text" id="name_1">
             <div class="enter">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-badge-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -32,16 +42,20 @@
                 </svg>
             </div>
         </div>
+        <div class="auto-info show">*Type "n=number of people" for auto list</div>
 
-        <div class="auto-info">*Type "n=number of people" for auto list</div>
+        <div class="names_2 hide">
+            <label for="name_2">Names</label>
+            <textarea id="name_2" rows="10"></textarea>
+        </div>
     </div>
 
     <div class="wrap">
         <ul class="name-list"></ul>
 
         <div class="buttons">
-            <button class="generate">Generate</button>
-            <button class="clear">Clear all</button>
+            <button class="generate hide">Generate</button>
+            <button class="clear hide">Clear all</button>
         </div>
 
         <div class="result"></div>

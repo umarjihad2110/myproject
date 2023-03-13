@@ -21,27 +21,40 @@ body {
   flex-direction: column;
   gap: 10px;
 }
-.content .people, .content .groups, .content .names {
+.content .people, .content .groups, .content .names_1 {
   display: flex;
   align-items: center;
   gap: 5px;
 }
-.content .people input, .content .groups input, .content .names input {
+.content .people input, .content .groups input, .content .names_1 input {
   padding: 5px;
   border-radius: 5px;
   border: none;
   outline: none;
   background-color: #eee;
 }
-.content .names {
-  margin-top: 20px;
+.content .change-type {
+  align-self: center;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.content .change-type:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.content .names_1 {
   align-self: center;
   position: relative;
 }
-.content .names input {
+.content .names_1 input {
   width: 100%;
 }
-.content .names .enter {
+.content .names_1 .enter {
   border-radius: 5px;
   background-color: #eee;
   display: flex;
@@ -53,12 +66,29 @@ body {
   bottom: 0;
   transition: all 0.2s;
 }
-.content .names .enter:hover {
-  background-color: #ddd;
+.content .names_1 .enter:hover {
+  background-color: #ccc;
 }
 .content .auto-info {
   font-size: 0.78rem;
   align-self: flex-end;
+}
+.content .names_2 {
+  display: flex;
+  flex-direction: column;
+}
+.content .names_2 textarea {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: #eee;
+}
+.content .show {
+  display: flex;
+}
+.content .hide {
+  display: none;
 }
 
 .wrap {
@@ -111,6 +141,12 @@ body {
 }
 .wrap .buttons .generate:hover, .wrap .buttons .clear:hover {
   background-color: rgba(255, 255, 255, 0.9);
+}
+.wrap .buttons .show-inline {
+  display: flex;
+}
+.wrap .buttons .hide {
+  display: none;
 }
 .wrap .result {
   align-self: center;

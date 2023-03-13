@@ -22,7 +22,7 @@ body{
     flex-direction: column;
     gap: 10px;
 
-    .people,.groups,.names{
+    .people,.groups,.names_1{
         display: flex;
         align-items: center;
         gap: 5px;
@@ -36,8 +36,23 @@ body{
         }
     }
 
-    .names{
-        margin-top: 20px;
+    .change-type{
+        align-self: center;
+        padding: 5px;
+        border-radius: 50%;
+        background-color: rgb(255,255,255,.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all .2s;
+
+        &:hover{
+            background-color: rgb(255,255,255,.6);
+        }
+    }
+
+    .names_1{
         align-self: center;
         position: relative;
 
@@ -58,7 +73,7 @@ body{
             transition: all .2s;
 
             &:hover{
-                background-color: #ddd;
+                background-color: #ccc;
             }
         }
     }
@@ -66,6 +81,27 @@ body{
     .auto-info{
         font-size: .78rem;
         align-self: flex-end;
+    }
+
+    .names_2{
+        display: flex;
+        flex-direction: column;
+
+        textarea{
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            background-color: #eee;
+        }
+    }
+
+    .show{
+        display: flex;
+    }
+
+    .hide{
+        display: none;
     }
 }
 
@@ -122,6 +158,14 @@ body{
             &:hover{
                 background-color: rgb(255,255,255,.9);
             }
+        }
+
+        .show-inline{
+            display: flex;
+        }
+    
+        .hide{
+            display: none;
         }
     }
 
