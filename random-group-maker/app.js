@@ -655,9 +655,9 @@ function generateGroup(type){
             result.appendChild(ul)
         }
 
+        // input the rest of li into ul
         const listResult = document.querySelectorAll(".list-result")
 
-        // input the rest of li into ul
         if (p % q != 0){
             for (let j = 0 ; j < p % q ; j++){
                 let li = document.createElement("li")
@@ -679,9 +679,10 @@ function generateGroup(type){
         clear.classList.remove("hide")
 
         clear.addEventListener("click",function(){
+            
+            // reset
             nameList.innerHTML = ''
             result.innerHTML = ""
-            numberList = 1
             arrNames = []
 
             clear.classList.add("hide")
@@ -696,7 +697,7 @@ function generateGroup(type){
                 let key = el.key
                 let array = ["Backspace","ArrowUp","ArrowDown","0","1",'2',"3","4",'5',"6","7",'8',"9"]
         
-                // generate button display
+                // clear button display
                 if (array.includes(key)){
                     result.innerHTML = ''
                     arrNames = []

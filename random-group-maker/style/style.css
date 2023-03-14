@@ -36,16 +36,23 @@ body {
 .content .change-type {
   align-self: center;
   padding: 5px;
-  border-radius: 50%;
+  border-radius: 70px;
   background-color: rgba(255, 255, 255, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 5px;
   cursor: pointer;
   transition: all 0.2s;
 }
 .content .change-type:hover {
   background-color: rgba(255, 255, 255, 0.6);
+}
+.content .change-type span {
+  font-size: 0.78rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .content .names_1 {
   align-self: center;
