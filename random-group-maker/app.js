@@ -260,19 +260,22 @@ function nameToList(){
 
     // number of people change
     sumPeople.addEventListener("keyup",function(){
-        let p = parseInt(sumPeople.value)
-          
-        // generate button display
-        if (p != numberList - 1){
-            generate.classList.add("hide")
-            generate.classList.remove("show-inline")
 
-            result.innerHTML = ''
-        }
-
-        else{
-            generate.classList.add("show-inline")
-            generate.classList.remove("hide")
+        if (type1.classList.contains("show")){
+            let p = parseInt(sumPeople.value)
+            
+            // generate button display
+            if (p != numberList - 1){
+                generate.classList.add("hide")
+                generate.classList.remove("show-inline")
+                
+                result.innerHTML = ''
+            }
+            
+            else{
+                generate.classList.add("show-inline")
+                generate.classList.remove("hide")
+            }
         }
     })
 
@@ -418,19 +421,22 @@ function autoList(){
 
     // number of people change
     sumPeople.addEventListener("keyup",function(){
-        let p = parseInt(sumPeople.value)
-          
-        // generate button display
-        if (p != numberList - 1){
-            generate.classList.add("hide")
-            generate.classList.remove("show-inline")
-
-            result.innerHTML = ''
-        }
-
-        else{
-            generate.classList.add("show-inline")
-            generate.classList.remove("hide")
+        
+        if (type1.classList.contains("show")){
+            let p = parseInt(sumPeople.value)
+            
+            // generate button display
+            if (p != numberList - 1){
+                generate.classList.add("hide")
+                generate.classList.remove("show-inline")
+                
+                result.innerHTML = ''
+            }
+            
+            else{
+                generate.classList.add("show-inline")
+                generate.classList.remove("hide")
+            }
         }
     })
 
@@ -684,22 +690,39 @@ function generateGroup(type){
             namesInput.focus();
         })
 
+        // the number of people change
+        sumPeople.addEventListener("keyup",function(el){
+            if (type2.classList.contains("show")){
+                let key = el.key
+                let array = ["Backspace","ArrowUp","ArrowDown","0","1",'2',"3","4",'5',"6","7",'8',"9"]
+        
+                // generate button display
+                if (array.includes(key)){
+                    result.innerHTML = ''
+                    arrNames = []
+
+                    clear.classList.add("hide")
+                    clear.classList.remove("show-inline")
+                }
+            }
+        })
+
         // the number of group change
         sumGroups.addEventListener("keyup",function(el){
             
             if (type2.classList.contains("show")){
-                let people = parseInt(sumGroups.value)
                 
                 let key = el.key
                 let array = ["Backspace","ArrowUp","ArrowDown","0","1",'2',"3","4",'5',"6","7",'8',"9"]
         
                 // generate button display
-                if (people != numberList - 1 && array.includes(key)){
+                if (array.includes(key)){
                     result.innerHTML = ''
-                }
+                    arrNames = []
 
-                clear.classList.add("hide")
-                clear.classList.remove("show-inline")
+                    clear.classList.add("hide")
+                    clear.classList.remove("show-inline")
+                }
             }
         })
     }
